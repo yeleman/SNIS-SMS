@@ -1,0 +1,515 @@
+{
+    "keyword": "palu",
+    "datasetId": "T4N2LdPgAsP",
+    "smsFormat": [
+        "EmN24I6TAfI.c6Vcc1gEs8R",
+        "mMw1F0c7LT3.c6Vcc1gEs8R",
+        "ZMPRQlepvIX.c6Vcc1gEs8R",
+        "MdDQw9FWID4.c6Vcc1gEs8R",
+        "Zn3nsY2BWTe.c6Vcc1gEs8R",
+        "ugs0O8ASTxp.c6Vcc1gEs8R",
+        "McX2EouWbKR.c6Vcc1gEs8R",
+        "zaVEWaYtpce.c6Vcc1gEs8R",
+        "k8w3aoYQYIw.c6Vcc1gEs8R",
+        "vKSGLvGFW36.c6Vcc1gEs8R",
+        "FjHEYw58Qna.c6Vcc1gEs8R",
+        "s9CR5R6WiV2.c6Vcc1gEs8R",
+        "UtqxoYVFzch.c6Vcc1gEs8R",
+        "EmN24I6TAfI.sw9YcaDlVGG",
+        "mMw1F0c7LT3.sw9YcaDlVGG",
+        "ZMPRQlepvIX.sw9YcaDlVGG",
+        "MdDQw9FWID4.sw9YcaDlVGG",
+        "Zn3nsY2BWTe.sw9YcaDlVGG",
+        "ugs0O8ASTxp.sw9YcaDlVGG",
+        "McX2EouWbKR.sw9YcaDlVGG",
+        "zaVEWaYtpce.sw9YcaDlVGG",
+        "k8w3aoYQYIw.sw9YcaDlVGG",
+        "vKSGLvGFW36.sw9YcaDlVGG",
+        "FjHEYw58Qna.sw9YcaDlVGG",
+        "s9CR5R6WiV2.sw9YcaDlVGG",
+        "UtqxoYVFzch.sw9YcaDlVGG",
+        "EmN24I6TAfI.R9ddZgAPS9K",
+        "mMw1F0c7LT3.R9ddZgAPS9K",
+        "ZMPRQlepvIX.R9ddZgAPS9K",
+        "MdDQw9FWID4.R9ddZgAPS9K",
+        "Zn3nsY2BWTe.R9ddZgAPS9K",
+        "ugs0O8ASTxp.R9ddZgAPS9K",
+        "McX2EouWbKR.R9ddZgAPS9K",
+        "zaVEWaYtpce.R9ddZgAPS9K",
+        "k8w3aoYQYIw.R9ddZgAPS9K",
+        "vKSGLvGFW36.R9ddZgAPS9K",
+        "FjHEYw58Qna.R9ddZgAPS9K",
+        "s9CR5R6WiV2.R9ddZgAPS9K",
+        "UtqxoYVFzch.R9ddZgAPS9K",
+        "EmN24I6TAfI.PINN036bZHB",
+        "mMw1F0c7LT3.PINN036bZHB",
+        "ZMPRQlepvIX.PINN036bZHB",
+        "MdDQw9FWID4.PINN036bZHB",
+        "Zn3nsY2BWTe.PINN036bZHB",
+        "ugs0O8ASTxp.PINN036bZHB",
+        "McX2EouWbKR.PINN036bZHB",
+        "zaVEWaYtpce.PINN036bZHB",
+        "k8w3aoYQYIw.PINN036bZHB",
+        "vKSGLvGFW36.PINN036bZHB",
+        "FjHEYw58Qna.PINN036bZHB",
+        "s9CR5R6WiV2.PINN036bZHB",
+        "UtqxoYVFzch.PINN036bZHB",
+        "EmN24I6TAfI.iTrugaNzkjx",
+        "mMw1F0c7LT3.iTrugaNzkjx",
+        "ZMPRQlepvIX.iTrugaNzkjx",
+        "MdDQw9FWID4.iTrugaNzkjx",
+        "Zn3nsY2BWTe.iTrugaNzkjx",
+        "ugs0O8ASTxp.iTrugaNzkjx",
+        "McX2EouWbKR.iTrugaNzkjx",
+        "zaVEWaYtpce.iTrugaNzkjx",
+        "k8w3aoYQYIw.iTrugaNzkjx",
+        "vKSGLvGFW36.iTrugaNzkjx",
+        "FjHEYw58Qna.iTrugaNzkjx",
+        "s9CR5R6WiV2.iTrugaNzkjx",
+        "UtqxoYVFzch.iTrugaNzkjx",
+        "er8SOYaoMfI.BazLEoJDKQj",
+        "er8SOYaoMfI.LkZ6wqcr1ub",
+        "er8SOYaoMfI.QuHN4zVYSfJ",
+        "er8SOYaoMfI.ygvzYv6zXoI",
+        "kMms8hj4vov.BazLEoJDKQj",
+        "kMms8hj4vov.LkZ6wqcr1ub",
+        "kMms8hj4vov.QuHN4zVYSfJ",
+        "kMms8hj4vov.ygvzYv6zXoI",
+        "AqM4VskBwXe.BazLEoJDKQj",
+        "AqM4VskBwXe.LkZ6wqcr1ub",
+        "AqM4VskBwXe.QuHN4zVYSfJ",
+        "AqM4VskBwXe.ygvzYv6zXoI",
+        "HQv2vd5iRuf.BazLEoJDKQj",
+        "HQv2vd5iRuf.LkZ6wqcr1ub",
+        "HQv2vd5iRuf.QuHN4zVYSfJ",
+        "HQv2vd5iRuf.ygvzYv6zXoI",
+        "PAyx7SSU73M.BazLEoJDKQj",
+        "PAyx7SSU73M.LkZ6wqcr1ub",
+        "PAyx7SSU73M.QuHN4zVYSfJ",
+        "PAyx7SSU73M.ygvzYv6zXoI",
+        "YXyE6qEg2PK.BazLEoJDKQj",
+        "YXyE6qEg2PK.LkZ6wqcr1ub",
+        "YXyE6qEg2PK.QuHN4zVYSfJ",
+        "YXyE6qEg2PK.ygvzYv6zXoI",
+        "R46cos0mxgZ.BazLEoJDKQj",
+        "R46cos0mxgZ.LkZ6wqcr1ub",
+        "R46cos0mxgZ.QuHN4zVYSfJ",
+        "R46cos0mxgZ.ygvzYv6zXoI",
+        "vJO02Spzsqt.BazLEoJDKQj",
+        "vJO02Spzsqt.LkZ6wqcr1ub",
+        "vJO02Spzsqt.QuHN4zVYSfJ",
+        "vJO02Spzsqt.ygvzYv6zXoI",
+        "QFyjg1BRkaA",
+        "OTl0KHyNjKC",
+        "ax3HR0bB0qi",
+        "rVr8pi2mP6S"
+    ],
+    "version": 1,
+    "organisationUnits": [
+        {
+            "label": "Aboso Centre de Sant\u00e9",
+            "id": "iA3y8AyMTG2"
+        },
+        {
+            "label": "Abibi Poste de Sant\u00e9",
+            "id": "MpYYIAhSjsq"
+        }
+    ],
+    "groups": [
+        {
+            "name": "Traitement Paludisme: 0-11 mois",
+            "category": {
+                "label": "0-11 mois",
+                "id": "c6Vcc1gEs8R"
+            },
+            "id": "palu_c6Vcc1gEs8R",
+            "dataElements": [
+                {
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9",
+                    "id": "EmN24I6TAfI"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9",
+                    "id": "mMw1F0c7LT3"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "ZMPRQlepvIX"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 trait\u00e9",
+                    "id": "MdDQw9FWID4"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "Zn3nsY2BWTe"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9",
+                    "id": "ugs0O8ASTxp"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "McX2EouWbKR"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 trait\u00e9",
+                    "id": "zaVEWaYtpce"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "k8w3aoYQYIw"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide r\u00e9alis\u00e9",
+                    "id": "vKSGLvGFW36"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide positif",
+                    "id": "FjHEYw58Qna"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse r\u00e9alis\u00e9e",
+                    "id": "s9CR5R6WiV2"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse positif",
+                    "id": "UtqxoYVFzch"
+                }
+            ]
+        },
+        {
+            "name": "Traitement Paludisme: 12-59 mois",
+            "category": {
+                "label": "12-59 mois",
+                "id": "sw9YcaDlVGG"
+            },
+            "id": "palu_sw9YcaDlVGG",
+            "dataElements": [
+                {
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9",
+                    "id": "EmN24I6TAfI"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9",
+                    "id": "mMw1F0c7LT3"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "ZMPRQlepvIX"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 trait\u00e9",
+                    "id": "MdDQw9FWID4"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "Zn3nsY2BWTe"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9",
+                    "id": "ugs0O8ASTxp"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "McX2EouWbKR"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 trait\u00e9",
+                    "id": "zaVEWaYtpce"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "k8w3aoYQYIw"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide r\u00e9alis\u00e9",
+                    "id": "vKSGLvGFW36"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide positif",
+                    "id": "FjHEYw58Qna"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse r\u00e9alis\u00e9e",
+                    "id": "s9CR5R6WiV2"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse positif",
+                    "id": "UtqxoYVFzch"
+                }
+            ]
+        },
+        {
+            "name": "Traitement Paludisme: 5-14 ans",
+            "category": {
+                "label": "5-14 ans",
+                "id": "R9ddZgAPS9K"
+            },
+            "id": "palu_R9ddZgAPS9K",
+            "dataElements": [
+                {
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9",
+                    "id": "EmN24I6TAfI"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9",
+                    "id": "mMw1F0c7LT3"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "ZMPRQlepvIX"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 trait\u00e9",
+                    "id": "MdDQw9FWID4"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "Zn3nsY2BWTe"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9",
+                    "id": "ugs0O8ASTxp"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "McX2EouWbKR"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 trait\u00e9",
+                    "id": "zaVEWaYtpce"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "k8w3aoYQYIw"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide r\u00e9alis\u00e9",
+                    "id": "vKSGLvGFW36"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide positif",
+                    "id": "FjHEYw58Qna"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse r\u00e9alis\u00e9e",
+                    "id": "s9CR5R6WiV2"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse positif",
+                    "id": "UtqxoYVFzch"
+                }
+            ]
+        },
+        {
+            "name": "Traitement Paludisme: 15 ans et plus",
+            "category": {
+                "label": "15 ans +",
+                "id": "PINN036bZHB"
+            },
+            "id": "palu_PINN036bZHB",
+            "dataElements": [
+                {
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9",
+                    "id": "EmN24I6TAfI"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9",
+                    "id": "mMw1F0c7LT3"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "ZMPRQlepvIX"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 trait\u00e9",
+                    "id": "MdDQw9FWID4"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "Zn3nsY2BWTe"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9",
+                    "id": "ugs0O8ASTxp"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "McX2EouWbKR"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 trait\u00e9",
+                    "id": "zaVEWaYtpce"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "k8w3aoYQYIw"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide r\u00e9alis\u00e9",
+                    "id": "vKSGLvGFW36"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide positif",
+                    "id": "FjHEYw58Qna"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse r\u00e9alis\u00e9e",
+                    "id": "s9CR5R6WiV2"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse positif",
+                    "id": "UtqxoYVFzch"
+                }
+            ]
+        },
+        {
+            "name": "Traitement Paludisme: Femmes enceintes",
+            "category": {
+                "label": "Dont femme  enceinte",
+                "id": "iTrugaNzkjx"
+            },
+            "id": "palu_iTrugaNzkjx",
+            "dataElements": [
+                {
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9",
+                    "id": "EmN24I6TAfI"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9",
+                    "id": "mMw1F0c7LT3"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "ZMPRQlepvIX"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 trait\u00e9",
+                    "id": "MdDQw9FWID4"
+                },
+                {
+                    "label": "Paludisme grave non confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "Zn3nsY2BWTe"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9",
+                    "id": "ugs0O8ASTxp"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 r\u00e9f\u00e9r\u00e9",
+                    "id": "McX2EouWbKR"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 trait\u00e9",
+                    "id": "zaVEWaYtpce"
+                },
+                {
+                    "label": "Paludisme grave confirm\u00e9 d\u00e9c\u00e9d\u00e9",
+                    "id": "k8w3aoYQYIw"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide r\u00e9alis\u00e9",
+                    "id": "vKSGLvGFW36"
+                },
+                {
+                    "label": "Paludisme test de diagnostic rapide positif",
+                    "id": "FjHEYw58Qna"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse r\u00e9alis\u00e9e",
+                    "id": "s9CR5R6WiV2"
+                },
+                {
+                    "label": "Paludisme goutte \u00e9paisse positif",
+                    "id": "UtqxoYVFzch"
+                }
+            ]
+        },
+        {
+            "dataElements": [
+                {
+                    "label": "CPN visite CPN 1 au CS",
+                    "id": "er8SOYaoMfI"
+                },
+                {
+                    "label": "CPN visite CPN 2 au CS",
+                    "id": "kMms8hj4vov"
+                },
+                {
+                    "label": "CPN visite CPN 3 au CS",
+                    "id": "AqM4VskBwXe"
+                },
+                {
+                    "label": "CPN visite CPN 4 au CS",
+                    "id": "HQv2vd5iRuf"
+                },
+                {
+                    "label": "CPN femme enceinte avec moustiguaire impregn\u00e9e d'insecticide \u00e0 longue dur\u00e9e au CS",
+                    "id": "PAyx7SSU73M"
+                },
+                {
+                    "label": "CPN femme enceinte ayant re\u00e7u sulfadoxine et pyrim\u00e9tamine 1\u00e8re dose",
+                    "id": "YXyE6qEg2PK"
+                },
+                {
+                    "label": "CPN femme enceinte ayant re\u00e7u sulfadoxine et pyrim\u00e9tamine 2\u00e8me dose",
+                    "id": "R46cos0mxgZ"
+                },
+                {
+                    "label": "CPN femme enceinte ayant re\u00e7u sulfadoxine et pyrim\u00e9tamine 3\u00e8me dose",
+                    "id": "vJO02Spzsqt"
+                }
+            ],
+            "name": "CPN Femmes Enceintes",
+            "id": "cpn",
+            "categories": [
+                {
+                    "label": "AS",
+                    "id": "BazLEoJDKQj"
+                },
+                {
+                    "label": "HAS",
+                    "id": "LkZ6wqcr1ub"
+                },
+                {
+                    "label": "ZS",
+                    "id": "QuHN4zVYSfJ"
+                },
+                {
+                    "label": "HZ",
+                    "id": "ygvzYv6zXoI"
+                }
+            ]
+        },
+        {
+            "name": "CPS Enfants",
+            "id": "cps",
+            "dataElements": [
+                {
+                    "label": "CPS enfant 0-6 mois",
+                    "id": "QFyjg1BRkaA"
+                },
+                {
+                    "label": "CPS moustiquaire impregn\u00e9e d'insecticide \u00e0 longue dur\u00e9e 0-11 mois",
+                    "id": "OTl0KHyNjKC"
+                },
+                {
+                    "label": "CPS enfant 6-59 mois",
+                    "id": "ax3HR0bB0qi"
+                }
+            ]
+        },
+        {
+            "name": "Autre",
+            "id": "autre",
+            "dataElements": [
+                {
+                    "label": "Population de l'aire de la sant\u00e9",
+                    "id": "rVr8pi2mP6S"
+                }
+            ]
+        }
+    ],
+    "name": "Rapport mensuel Paludisme"
+}

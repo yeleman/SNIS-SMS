@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SNIS SMS</string>
+    <string name="app_name_long_subtitled">Système National d\'Information Sanitaire – transmission SMS</string>
+
+    <string name="app_market_url">market://details?id=com.yeleman.snisrdcsms</string>
+    <string name="version_button_default_label">Vérifier mises à jour</string>
+    <string name="version_button_label">Version %1$s (vérifier mises à jour)</string>
+
+    <!-- Common Strings -->
+    <string name="standard_dialog_ok">OK</string>
+
+    <string name="sms_timeout_dialog_title">Pas de réponse du serveur</string>
+    <string name="sms_timeout_dialog_body">L\'application n\'a pas reçue de réponse du serveur.\nLa réponse peut parfois prendre du temps avant d\'arriver.\nVérifiez vos SMS pendant 5mn puis appelez la Hotline.</string>
+
+    <string name="server_sms_received_title">Réponse du serveur</string>
+
+    <string name="sending_sms_report_title">Envoi en cours</string>
+    <string name="sending_sms_report_body">Votre demande a été envoyée par SMS.\nVeuillez attendre la réponse du serveur pour vérifier qu\'il a bien été enregistré.</string>
+
+    <!-- Change Password -->
+
+    <!-- Password Dialog -->
+    <string name="username">Identifiant</string>
+    <string name="submit">Envoyer</string>
+    <string name="cancel">Retour</string>
+    <string name="password_dialog_title">Identification</string>
+    <string name="password_dialog_text">Merci de renseigner vos identifiants DHIS pour transmettre le rapport %1$s</string>
+
+    <!-- menu items -->
+    <string name="menu_about">Aide</string>
+
+    <!-- Standard Errors -->
+    <string name="error_dialog_title">Erreur !</string>
+    <string name="error_dialog_button_text">Fermer et corriger</string>
+    <string name="error_field_empty">Champs requis</string>
+    <string name="error_field_min_chars">%s caractères minimum</string>
+    <string name="error_field_nopasswd">pas d\'espace, %s caractères mini.</string>
+    <string name="error_field_positive_integer">Entier positif requis</string>
+    <string name="error_must_be_inferior">%1$s (%2$d) ne peut être supérieur ou égal à %3$s (%4$d)</string>
+    <string name="error_must_be_inferior_or_equal">%1$s (%2$d) ne peut être supérieur à %3$s (%4$d)</string>
+    <string name="error_must_be_equal">%1$s (%2$d) doit être égal au %3$s (%4$d)</string>
+    <string name="error_sms_not_sent_title">Erreur d\'envoi du SMS</string>
+    <string name="error_sms_not_sent_body">Le SMS n\'a pas pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_activity_title">Paramètres</string>
+    <string name="settings_menuentry">Paramètres</string>
+    <string name="settings_add_server_num">Ajouter le numéro du serveur à vos contacts</string>
+    <string name="settings_server_num">Numéro Serveur</string>
+    <string name="settings_server_num_summary">Numéro de téléphone du «serveur-relai»</string>
+    <string name="settings_username">Identifiant</string>
+    <string name="settings_username_summary">Identifiant DHIS</string>
+    <string name="settings_password">Mot de passe</string>
+    <string name="settings_password_summary">Mot de passe DHIS</string>
+    <string name="settings_pin">Code PIN</string>
+    <string name="settings_pin_summary">Remplace le mot de passe DHIS pour plus de rapidité.</string>
+    <string name="settings_check">Enregistrer puis vérifier</string>
+    <string name="settings_check_summary">Envoi un SMS au serveur pour vérifier les identifiants.</string>
+    <string name="settings_pin_hint">Ex: 1234</string>
+    <string name="settings_password_hint">Ex: Abcd123</string>
+    <string name="settings_username_hint">Ex: Olivier_Kakesa</string>
+
+    <!-- About -->
+    <string name="reset_database_text">Supprimer la base de donnée</string>
+    <string name="reset_confirmation_text">Êtes vous certain de vouloir supprimer vos données ?</string>
+    <string name="reseted_confirmation_text">La base de donnée %s a bien été supprimée.</string>
+    <string name="reset_database_counter_text">Appuyer encore %d fois pour supprimer la base de données</string>
+
+    <!--SMS Statuses -->
+    <string name="status_SENT_OK">SMS envoyé.</string>
+    <string name="status_ERROR_GENERIC_FAILURE">Generic Failure</string>
+    <string name="status_ERROR_NO_SERVICE">Pas de réseau (No Service)</string>
+    <string name="status_ERROR_NULL_PDU">Null PDU</string>
+    <string name="status_ERROR_RADIO_OFF">Carte SIM désactivée.</string>
+    <string name="status_DELIVERED_OK">SMS reçu par le serveur.</string>
+    <string name="status_CANCELED">SMS non reçu par le serveur.</string>
+
+    <!--Section -->
+    <string name="title_activity_section">SectionActivity</string>
+    <string name="save_button_label">Enregistrer les données</string>
+    <string name="saved_section_toast">Données enregistrées</string>
+
+    <!--Home -->
+    <string name="introduction">Chaque mois, transmettez vos rapports SNIS pour le Paludisme directement depuis votre téléphone, par SMS.</string>
+    <string name="reset_values_text">Par défaut, l\'application pré-remplie votre formulaire avec les dernières données saisies pour vous faciliter la saisie et la transmission des données.\n\nVous pouvez remettre ces données à zéro lorsque nécessaire (saisir le mois suivant par exemple).</string>
+    <string name="reset_values_button">Réinitialiser toutes les valeurs</string>
+    <string name="reset_values_completed">Toutes les valeurs ont été réinitialisées</string>
+
+    <string name="in_progress">Veuillez patienter…</string>
+    <string name="submit_button">Transmettre toutes les données</string>
+    <string name="submit_progress_button">Transmettre toutes les données</string>
+    <string name="error_field_no_pin">Code PIN requis. %d chiffres</string>
+    <string name="error_pin_code">Erreur de code PIN</string>
+    <string name="organisation_unit_select_none">-</string>
+    <string name="error_no_orgunit_selected">Unité d\'organisation manquante</string>
+    <string name="export_database_text">Exporter la base de données</string>
+    <string name="export_database_succeeded">La base de données a été exportée</string>
+    <string name="export_database_failed">Impossible d\'exporter la BDD.\nVérifier les permissions et réessayez</string>
+    <string name="help_text"><![CDATA[Cette application vous permet de transmettre vos données de routine Paludisme par SMS.<br /><br />Vous devez disposer d\'un compte actif sur le SNIS/RDC (DHIS) pour pouvor transmettre vos données.<br /><br />Si vous n\'avez pas de compte, contactez la DSNIS.<br /><br /><b>Configuration</b><br />À la première utilisation, vous devriez aller dans la rubrique «paramètres» pour renseigner vos identifiants DHIS.<br />Ceux-ci étant long et difficiles à taper sur un téléphone, l\'application vous demande de choisir un simple code PIN (4 chiffres) qui vous permettra de vous passer de votre mot de passe par la suite.<br /><br /><b>Attention:</b> le mot de passe doit être renseigné tout de même et le code PIN n\'est valable que dans l\'application SMS. Vous pouvez le changer à tout môment.<br /><br />Lors de la saisie de vos identifiant et mot de passe DHIS, l\'application vérifie ceux-ci par l\'envoi d\'un SMS.<br />Cela nous permet d\'assurer que vous les avez bien saisies, qu\'ils sont valides et que vous disposez des droits nécessaires pour transmettre des données.<br />Tant que cette vérification n\'est pas effectuée, vous ne pourrez pas transmettre de données (mais vous pourrez commencer à les saisir).<br /><br /><b>Saisie des données</b><br />La saisie s\'effectue section par section ; en effet, les champs de saisie sont regroupés par type et/ou tranches d\'âge.<br /><br />Toutes les valeurs attendues sont des entiers positifs.<br /><br />Une fois la saisie terminée (elle n\'a pas besoin d\'être complète), vous pouvez transmettre les informations.<br /><br /><b>Transmission des données</b><br />La transmission se fera par SMS et vous recevrez un SMS de confirmation immédiatement. Veuillez bien le lire, celui-ci peut indiquer qu\'une erreur s\'est produite.<br /><br />Vous pouvez envoyer les informations au fur et à mesure (pas besoin d\'attendre d\'avoir toutes les données) mais chaque envoi «consommera» un ou plusieurs SMS sur votre crédit.<br /><br />En moyenne une transmission complète utilise 2 à 3 SMS.<br /><br /><b>Assistance technique</b><br />En cas de problème, veuillez contacter la DSNIS.]]></string>
+    <string name="about_advanced_options"><![CDATA[Options avancées (utiliser sur demande)]]></string>
+    <string name="permission_required">Permission requise</string>
+    <string name="enable_write_in_settings_text">Vous avez désactivé la permission d\'écriture sur le stockage externe de manière permanente.\n\nPour pouvoir exporter la base de données (non nécessaire à la transmission), vous devez activer l\'«autorisation Stockage» dans les paramètres de l\'application.</string>
+    <string name="enable_write_text">L\'application a besoin de la permission d\'écrire sur votre stockage externe pour exporter la base de données.\n\nMerci de réessayer en autorisant si vous avez besoin de l\'export.</string>
+    <string name="enable_sms_in_settings_text">Vous avez désactivé la permission d\'envoi SMS de manière permanente.\n\nPour que l\'application puisse transmettre les données, vous devez activer l\'«autorisation SMS» dans les paramètres de l\'application.</string>
+    <string name="enable_sms_text">L\'application nécessite la permission d\'envoyer des SMS pour pouvoir transmettre les données.\n\nMerci de réessayer et d\'autoriser l\'envoi de SMS.</string>
+    <string name="open_settings_button">Ouvrir les paramètres</string>
+    <string name="progression_label_text">%1$d données remplies sur un total de %2$d (%3$s)</string>
+</resources>

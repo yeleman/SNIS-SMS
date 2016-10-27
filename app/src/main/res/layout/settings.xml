@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/textViewLabel"
+            android:text="@string/settings_server_num"
+            android:layout_height="wrap_content" />
+        <EditText
+            style="@style/editText"
+            android:id="@+id/et_server_number"
+            android:hint="@string/settings_server_num"
+            android:inputType="number"
+            android:imeOptions="actionNext"/>
+        <TextView
+            style="@style/editText"
+            android:text="@string/settings_server_num_summary"/>
+
+        <TextView
+            style="@style/textViewLabel"
+            android:text="@string/settings_username" />
+
+        <EditText
+            style="@style/editText"
+            android:id="@+id/et_username"
+            android:hint="@string/settings_username_hint"
+            android:imeOptions="actionNext" />
+        <TextView
+            style="@style/editText"
+            android:text="@string/settings_username_summary"/>
+
+        <TextView
+            style="@style/textViewLabel"
+            android:text="@string/settings_password"/>
+        <EditText
+            style="@style/editText"
+            android:inputType="textPassword"
+            android:id="@+id/et_password"
+            android:imeOptions="actionNext"
+            android:hint="@string/settings_password_hint"/>
+        <TextView
+            style="@style/editText"
+            android:text="@string/settings_password_summary"/>
+
+        <TextView
+            style="@style/textViewLabel"
+            android:text="@string/settings_pin"/>
+        <EditText
+            style="@style/editText"
+            android:id="@+id/et_pin"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:imeOptions="actionDone"
+            android:hint="@string/settings_pin_hint" />
+
+        <TextView
+            style="@style/editText"
+            android:text="@string/settings_pin_summary"/>
+
+        <Button
+            android:text="@string/settings_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_check"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            style="@style/editText"
+            android:text="@string/settings_check_summary"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:background="#FF909090"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="1px" />
+
+        <Button
+            android:text="@string/settings_add_server_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:onClick="addContact"
+            android:textSize="14sp"
+            android:background="#efefef" />
+
+    </LinearLayout>
+</ScrollView>

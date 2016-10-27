@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.yeleman.snisrdcsms.SectionActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_header"
+        android:visibility="gone"
+        android:padding="4dp"
+        android:background="@drawable/border_bottom">
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/ll_layout"
+                android:layout_margin="10dp">
+
+            </LinearLayout>
+
+            <Button
+                style="@style/sendButton"
+                android:id="@+id/btn_save"
+                android:text="@string/save_button_label" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

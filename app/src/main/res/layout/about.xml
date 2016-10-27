@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#0066ff">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_layout"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:text="@string/app_name_long_subtitled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:linksClickable="false"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white"
+                android:gravity="center|center_vertical" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/btn_version"
+                android:textColor="@android:color/white"
+                android:text="@string/version_button_default_label"
+                android:gravity="center|center_vertical" />
+
+           <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_help"
+                android:linksClickable="false"
+                android:text="@string/help_text"
+                android:textColor="@android:color/white"
+                android:layout_margin="10dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:text="@string/about_advanced_options"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/btn_exportDB"
+                android:textColor="@android:color/white"
+                android:text="@string/export_database_text"
+                android:gravity="center|center_vertical" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/btn_resetDB"
+                android:text="@string/reset_database_text"
+                android:gravity="center|center_vertical"
+                android:textColor="@android:color/holo_red_light" />
+
+        </LinearLayout>
+    </ScrollView>

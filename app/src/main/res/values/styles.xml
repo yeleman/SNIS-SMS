@@ -1,0 +1,41 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <!--<style name="AppTheme" parent="android:Theme.Material.Light">-->
+         Customize your theme here.
+    </style>
+
+    <style name="textViewLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:linksClickable">false</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+    <style name="editText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:editable">true</item>
+    </style>
+    <style name="editText050" parent="editText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">0.50</item>
+    </style>
+    <style name="editNumberText" parent="editText">
+        <item name="android:inputType">number</item>
+    </style>
+    <style name="editNumberText050" parent="editText050">
+        <item name="android:inputType">number</item>
+    </style>
+    <style name="editNumberDecimalText050" parent="editText050">
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+    <style name="sendButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+</resources>
