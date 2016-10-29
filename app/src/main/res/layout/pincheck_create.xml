@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/textViewLabel"
+            android:text="@string/create_a_pin"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_pin_explanation"/>
+        <EditText
+            style="@style/editText"
+            android:id="@+id/et_pin"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:imeOptions="actionDone"
+            android:hint="@string/settings_pin_hint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <Button
+                android:layout_weight="0.5"
+                android:text="@string/settings_goback_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_back"/>
+            <Button
+                android:layout_weight="0.5"
+                android:text="@string/settings_create_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_create"
+                android:textColor="#0066ff"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

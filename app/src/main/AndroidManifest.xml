@@ -9,9 +9,9 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
+        android:name=".App"
         android:allowBackup="false"
         android:fullBackupContent="@xml/backup_rules"
-        android:name=".App"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
@@ -31,21 +31,19 @@
         <activity
             android:name=".HomeActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ReportActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".AboutActivity"
             android:configChanges="keyboardHidden"
@@ -53,14 +51,17 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/settings_activity_title"
             android:configChanges="keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:label="@string/settings_activity_title"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SectionActivity"
-            android:label="@string/title_activity_section"
             android:configChanges="keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:label="@string/title_activity_section"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PINCheckActivity"
+            android:label="@string/title_activity_pincheck"></activity>
     </application>
 
 </manifest>

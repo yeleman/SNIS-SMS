@@ -307,6 +307,18 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         });
     }
 
+    protected void setAssertPINCodeOK(final EditText editText, final String pinCode) {
+        updateFieldCheckedStatus(editText, false);
+        editText.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                updateFieldCheckedStatus(editText, assertPINCodeOK(editText, pinCode));
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+    }
+
     /* Data Coherence helpers */
     protected boolean mustBeInferior(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
     	int valueA = integerFromField(fieldA);

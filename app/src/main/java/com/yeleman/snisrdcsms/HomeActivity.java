@@ -143,7 +143,7 @@ public class HomeActivity extends CheckedFormActivity {
                 intent = new Intent(this, AboutActivity.class);
                 break;
             case R.id.settings_menuentry:
-                intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, PINCheckActivity.class);
                 break;
         }
         startActivity(intent);
