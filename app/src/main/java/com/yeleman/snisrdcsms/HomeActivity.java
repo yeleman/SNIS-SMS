@@ -53,6 +53,7 @@ public class HomeActivity extends CheckedFormActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        disableSMSReceiving();
         setContentView(R.layout.home);
         setTitle(R.string.app_name);
         setupOrRefreshUI();

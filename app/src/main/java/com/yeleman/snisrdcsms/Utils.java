@@ -304,4 +304,8 @@ public class Utils {
         return formatted;
     }
 
+    public static String cleanMsisdn(String msisdn) {
+        return msisdn.replace(Constants.PHONE_PREFIX, "").replace("+", "");
+    }
+
 }

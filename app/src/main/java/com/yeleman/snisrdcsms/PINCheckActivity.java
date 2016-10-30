@@ -22,6 +22,7 @@ public class PINCheckActivity extends CheckedFormActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        disableSMSReceiving();
         setupOrRefreshUI();
     }
 

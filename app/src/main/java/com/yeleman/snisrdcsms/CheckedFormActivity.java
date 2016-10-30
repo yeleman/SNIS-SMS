@@ -636,9 +636,17 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         }, time);
     }
 
+    protected void disableSMSReceiving() {
+        unRegisterSMSReceiver();
+        mSmsReceiver = null;
+        mSmsSentReceiver = null;
+        mSmsDeliveredReceiver = null;
+        progressDialog = null;
+    }
+
     protected void registerSMSReceiver() {
         if (mSmsReceiver != null) {
-            Log.d(TAG, "registering SMSReceiver");
+            Log.d(TAG, this.getLocalClassName() + " registering SMSReceiver");
             IntentFilter filter = new IntentFilter();
             // must be set high so that we have priority over other SMS Apps.
             // doesn't matter as we don't discard SMS.
@@ -649,28 +657,28 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 
         if (mSmsSentReceiver != null) {
             registerReceiver(mSmsSentReceiver, new IntentFilter(Constants.SMS_SENT_INTENT));
-            Log.d(TAG, "Registering BroadcastReceiver SMS_SENT");
+            Log.d(TAG, this.getLocalClassName() + " Registering BroadcastReceiver SMS_SENT");
         }
 
         if (mSmsDeliveredReceiver != null) {
             registerReceiver(mSmsDeliveredReceiver, new IntentFilter(Constants.SMS_DELIVERED_INTENT));
-            Log.d(TAG, "Registering BroadcastReceiver SMS_DELIVERED");
+            Log.d(TAG, this.getLocalClassName() + " Registering BroadcastReceiver SMS_DELIVERED");
         }
     }
 
     protected void unRegisterSMSReceiver() {
         if (mSmsReceiver != null) {
-            Log.d(TAG, "unregistering SMSReceiver");
+            Log.d(TAG, this.getLocalClassName() + " unregistering SMSReceiver");
             unregisterReceiver(mSmsReceiver);
         }
 
         if (mSmsSentReceiver != null) {
-            Log.d(TAG, "unregistering SMSSentReceiver");
+            Log.d(TAG, this.getLocalClassName() + " unregistering SMSSentReceiver");
             unregisterReceiver(mSmsSentReceiver);
         }
 
         if (mSmsDeliveredReceiver != null) {
-            Log.d(TAG, "unregistering SMSDeliveredReceiver");
+            Log.d(TAG, this.getLocalClassName() + " unregistering SMSDeliveredReceiver");
             unregisterReceiver(mSmsDeliveredReceiver);
         }
     }

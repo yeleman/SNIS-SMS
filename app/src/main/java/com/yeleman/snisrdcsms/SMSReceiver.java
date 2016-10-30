@@ -29,6 +29,7 @@ public class SMSReceiver extends BroadcastReceiver
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         String serverNumber = sharedPrefs.getString(Constants.KEY_SERVER_PHONE_NUMBER, Constants.SERVER_PHONE_NUMBER);
+        String cleanedServerNumber = Utils.cleanMsisdn(serverNumber);
 
         Bundle bundle = intent.getExtras();
         if (bundle == null) {
@@ -54,10 +55,10 @@ public class SMSReceiver extends BroadcastReceiver
         String from = null;
         Long timestamp = 0L;
         for (SmsMessage part: parts) {
+            String partOriginatingAddress = Utils.cleanMsisdn(part.getOriginatingAddress());
             // skip messages not from our server
-            if (!part.getOriginatingAddress()
-                    .replace(Constants.PHONE_PREFIX, "")
-                    .equals(serverNumber.replace(Constants.PHONE_PREFIX, ""))) {
+            if (!partOriginatingAddress.equals(cleanedServerNumber)) {
+                // Log.d(TAG, "received from non-server number: " + cleanedServerNumber + " -- " + partOriginatingAddress);
                 continue;
             }
 
