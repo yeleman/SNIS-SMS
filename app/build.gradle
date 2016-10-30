@@ -8,8 +8,8 @@ android {
         applicationId "com.yeleman.snisrdcsms"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 4
-        versionName "1.4b"
+        versionCode 5
+        versionName "1.5b"
     }
     buildTypes {
         release {
