@@ -146,4 +146,7 @@ public class ReportActivity extends CheckedFormActivity {
         }
     }
 
+    public void startViewerActivity(View view) {
+        startActivity(new Intent(this, DataViewerActivity.class));
+    }
 }

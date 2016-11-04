@@ -304,6 +304,10 @@ public class Utils {
         return formatted;
     }
 
+    public static String numberFormat(int number) {
+        return String.format(Locale.FRANCE, "%,d", number);
+    }
+
     public static String cleanMsisdn(String msisdn) {
         return msisdn.replace(Constants.PHONE_PREFIX, "").replace("+", "");
     }

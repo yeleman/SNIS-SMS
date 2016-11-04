@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/data_viewer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yeleman.snisrdcsms.DataViewerActivity"
+    android:weightSum="1">
+    <TextView
+        android:id="@+id/tv_section_label"
+        style="@style/sectionLabel"
+        android:lines="2"
+        android:maxLines="2"
+        android:minLines="2"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.75">
+
+        <TableLayout
+            android:id="@+id/tl_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TableLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_weight="0.25"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+        <Button
+            android:textSize="16sp"
+            android:lines="1"
+            android:maxLines="1"
+            android:id="@+id/btn_previous"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+        <Button
+            android:textSize="16sp"
+            android:lines="1"
+            android:maxLines="1"
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"/>
+    </LinearLayout>
+</LinearLayout>

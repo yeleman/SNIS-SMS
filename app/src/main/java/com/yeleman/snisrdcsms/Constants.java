@@ -21,7 +21,7 @@ public class Constants {
     public static final int SMS_ERROR = 2;
     public static final int SMS_UNKNOWN = 3;
 
-    public static final String SERVER_PHONE_NUMBER = null;
+    public static final String SERVER_PHONE_NUMBER = "851779857";
     public static final int PIN_CODE_NUM_CHARS = 4;
     public static final int MIN_CHARS_PASSWORD = 4;
     public static final int MIN_CHARS_USERNAME = 3;

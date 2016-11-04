@@ -62,14 +62,14 @@ public class JSONFormParser extends JSONFormParserMixin {
 
     public static final String TAG = Constants.getLogTag("JSONFormParser");
     public static final HashMap<Integer,JSONFormParserVersion> VERSIONS = new HashMap<>();
-    static{ VERSIONS.put(1, new JSONFormVersion1()); }
+    static{ VERSIONS.put(2, new JSONFormVersion2()); }
 
 
     public static void removePreviousData(int upToVersion) {
         for (Map.Entry<Integer, JSONFormParserVersion> entry : VERSIONS.entrySet()) {
             Integer version = entry.getKey();
             JSONFormParserVersion parser = entry.getValue();
-            if (version >= upToVersion) {
+            if (version > upToVersion) {
                 continue;
             }
             parser.removePreviousData();
@@ -82,10 +82,6 @@ public class JSONFormParser extends JSONFormParserMixin {
     }
 
     public static Boolean initializeFormFromJSON(Context context, String fileName) throws JSONException {
-        if (Config.getOrNull(KEY_DB_INITIALIZED) != null) {
-            return false;
-        }
-
         String filePath = String.format("sms/%s", fileName);
         JSONObject jsonObject;
         try {
@@ -96,6 +92,10 @@ public class JSONFormParser extends JSONFormParserMixin {
         // SMS format version
         Integer version = getInt(jsonObject, KEY_VERSION);
         if (version == null) {
+            return false;
+        }
+
+        if (Config.getOrNull(KEY_DB_INITIALIZED) != null && version.toString().equals(Config.get(KEY_VERSION))) {
             return false;
         }
 
@@ -124,9 +124,9 @@ public class JSONFormParser extends JSONFormParserMixin {
 }
 
 
-class JSONFormVersion1 extends JSONFormParserMixin implements JSONFormParserVersion {
+class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVersion {
 
-    public static final String TAG = Constants.getLogTag("JSONFormVersion1");
+    public static final String TAG = Constants.getLogTag("JSONFormVersion2");
 
     public void removePreviousData() {
         Log.d(TAG, "removePreviousData");
@@ -146,7 +146,7 @@ class JSONFormVersion1 extends JSONFormParserMixin implements JSONFormParserVers
         // record expected organisationUnits
         JSONArray organisationUnits = getJSONArray(jsonObject, KEY_ORGANISATION_UNITS);
         for (int l = 0; l< (organisationUnits != null ? organisationUnits.length() : 0); l++) {
-            Log.d(TAG, "group("+l+")");
+            Log.d(TAG, "orgunit("+l+")");
             JSONObject organisationUnit = organisationUnits.getJSONObject(l);
             Long organisationUnitId = OrganisationUnit.create(
                     getString(organisationUnit, KEY_ID),
@@ -155,10 +155,10 @@ class JSONFormVersion1 extends JSONFormParserMixin implements JSONFormParserVers
         }
 
         // loops on groups
-        JSONArray groups = getJSONArray(jsonObject, "groups");
+        JSONArray groups = getJSONArray(jsonObject, "sections");
         for(int i = 0; i< (groups != null ? groups.length() : 0); i++){
             JSONObject group = groups.getJSONObject(i);
-            Log.d(TAG, "group("+i+")");
+            Log.d(TAG, "section("+i+")");
 
             // record Group
             String categoryType;

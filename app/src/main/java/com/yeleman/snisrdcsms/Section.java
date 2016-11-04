@@ -8,6 +8,7 @@ import com.orm.dsl.Ignore;
 import com.orm.query.Condition;
 import com.orm.query.Select;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -69,6 +70,24 @@ public class Section extends SugarRecord {
         return label;
     }
 
+    public String getCategoryLabel() {
+        if (hasSingleCategory()) {
+            return getActualCategory().getLabel();
+        }
+        return getLabel();
+    }
+
+    public Category getActualCategory() {
+        if (hasSingleCategory()) {
+            return Category.findWithQuery(
+                    Category.class,
+                    "SELECT * FROM CATEGORY WHERE ID IN "+
+                    "(SELECT CATEGORY_ID FROM CATEGORY_SECTION WHERE SECTION_ID=?)",
+                    getStringId()).get(0);
+        }
+        return null;
+    }
+
     void setCategoryType(String categoryType) {
         if (!CATEGORY_TYPE.contains(categoryType)) {
             throw new IllegalArgumentException("Invalid category type");
@@ -109,16 +128,31 @@ public class Section extends SugarRecord {
         }
     }
 
-    public Long getExpectedValuesNumber() {
+    public List<DataValue> getExpectedDataValues() {
         if (hasMultipleCategories()) {
-            return (long) DataValue.findWithQuery(
+            return DataValue.findWithQuery(
                     DataValue.class,
                     "SELECT * FROM DATA_VALUE WHERE DATA_ELEMENT_ID IN " +
                             "(SELECT DATA_ELEMENT_ID FROM DATA_ELEMENT_SECTION WHERE SECTION_ID=?);",
-                    String.valueOf(getId())).size();
+                    String.valueOf(getId()));
+        } else if (hasSingleCategory()) {
+            return DataValue.findWithQuery(
+                    DataValue.class,
+                    "SELECT * FROM DATA_VALUE WHERE DATA_ELEMENT_ID IN " +
+                    "(SELECT DATA_ELEMENT_ID FROM DATA_ELEMENT_SECTION WHERE SECTION_ID=?) " +
+                    "AND CATEGORY_ID IN (SELECT CATEGORY_ID FROM CATEGORY_SECTION WHERE SECTION_ID=?);",
+                    getStringId(), getStringId());
         } else {
-            return Select.from(DataElementSection.class).where(Condition.prop("SECTION_ID").eq(getId())).count();
+            return DataValue.findWithQuery(
+                    DataValue.class,
+                    "SELECT * FROM DATA_VALUE WHERE DATA_ELEMENT_ID IN " +
+                    "(SELECT DATA_ELEMENT_ID FROM DATA_ELEMENT_SECTION WHERE SECTION_ID = ?) AND CATEGORY_ID IS NULL;",
+                    getStringId());
         }
+    }
+
+    public Long getExpectedValuesNumber() {
+        return (long) getExpectedDataValues().size();
     }
     public String getLabelWithProgression() {
         return String.format(Locale.FRANCE, "%s [%d/%d]", getLabel(), getFilledDataValuesNumber(), getExpectedValuesNumber());

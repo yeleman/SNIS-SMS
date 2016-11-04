@@ -23,6 +23,7 @@ public class PINCheckActivity extends CheckedFormActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         disableSMSReceiving();
+        setTitle(getString(R.string.settings_pin));
         setupOrRefreshUI();
     }
 
@@ -40,6 +41,7 @@ public class PINCheckActivity extends CheckedFormActivity {
         final Activity activity = this;
         pinField = (EditText) findViewById(R.id.et_pin);
         setAssertPINCodeOK(pinField, sharedPrefs.getString(Constants.KEY_PIN_CODE, null));
+        pinField.requestFocus();
 
         backButton = (Button) findViewById(R.id.btn_back);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +83,7 @@ public class PINCheckActivity extends CheckedFormActivity {
         final Activity activity = this;
         pinField = (EditText) findViewById(R.id.et_pin);
         setAssertPINAlike(pinField);
+        pinField.requestFocus();
 
         backButton = (Button) findViewById(R.id.btn_back);
         backButton.setOnClickListener(new View.OnClickListener() {

@@ -37,6 +37,19 @@
             android:layout_marginRight="10dp" />
 
         <Button
+            android:onClick="startViewerActivity"
+            android:id="@+id/btn_view"
+            android:text="@string/view_data_button"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textSize="14sp"
+            android:layout_margin="10dp"
+            android:background="#efefef" />
+
+        <Button
             style="@style/sendButton"
             android:id="@+id/btn_submit"
             android:text="@string/submit_button"

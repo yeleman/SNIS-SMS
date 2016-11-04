@@ -1,10 +1,13 @@
 package com.yeleman.snisrdcsms;
 
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
@@ -13,6 +16,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -155,7 +160,7 @@ public class SectionActivity extends CheckedFormActivity {
                     et_field.setTag(dataValue.getId());
                     et_field.setImeOptions(EditorInfo.IME_ACTION_NEXT);
                     et_field.setInputType(InputType.TYPE_CLASS_NUMBER);
-                    et_field.setHint(dataValue.getActualCategory().getLabel());
+                    // et_field.setHint(dataValue.getActualCategory().getLabel());
                     setAssertPositiveIntegerOrNull(et_field);
 
                     // record reference to field in list

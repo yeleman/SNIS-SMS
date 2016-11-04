@@ -85,6 +85,10 @@ public class DataValue extends SugarRecord {
         return getValue() == null ? Constants.MISSING_VALUE : getValue();
     }
 
+    public String getDisplayValue() {
+        return getValue() == null ? Constants.MISSING_VALUE : Utils.numberFormat(Integer.valueOf(getValue()));
+    }
+
     public void resetValue() { setValue(null); save(); }
 
     public String getHumanId() {

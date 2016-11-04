@@ -12,7 +12,7 @@
     <string name="standard_dialog_ok">OK</string>
 
     <string name="sms_timeout_dialog_title">Pas de réponse du serveur</string>
-    <string name="sms_timeout_dialog_body">L\'application n\'a pas reçue de réponse du serveur.\nLa réponse peut parfois prendre du temps avant d\'arriver.\nVérifiez vos SMS pendant 5mn puis appelez la Hotline.</string>
+    <string name="sms_timeout_dialog_body">L\'application n\'a pas reçu de réponse du serveur.\nLa réponse peut parfois prendre du temps avant d\'arriver.\nVérifiez vos SMS pendant 5mn puis appelez le support.</string>
 
     <string name="server_sms_received_title">Réponse du serveur</string>
 
@@ -78,7 +78,7 @@
     <string name="status_CANCELED">SMS non reçu par le serveur.</string>
 
     <!--Section -->
-    <string name="title_activity_section">SectionActivity</string>
+    <string name="title_activity_section">Rapportage</string>
     <string name="save_button_label">Enregistrer les données</string>
     <string name="saved_section_toast">Données enregistrées</string>
 
@@ -107,13 +107,15 @@
     <string name="enable_sms_text">L\'application nécessite la permission d\'envoyer des SMS pour pouvoir transmettre les données.\n\nMerci de réessayer et d\'autoriser l\'envoi de SMS.</string>
     <string name="open_settings_button">Ouvrir les paramètres</string>
     <string name="progression_label_text">%1$d données remplies sur un total de %2$d (%3$s)</string>
-    <string name="title_activity_pincheck">PINCheckActivity</string>
+    <string name="title_activity_pincheck">Code PIN</string>
     <string name="create_a_pin">Créez un code PIN</string>
     <string name="create_pin_explanation">Pour vous éviter de devoir saisir vos identifiants DHIS à chaque envoi, ceux-ci vont être enregistrés une seule fois dans l\'application.\n\nVous devez donc créer un code PIN à 4 chiffres qui permettra de «proteger» vos identifiants.</string>
-    <string name="settings_create_button">Créer le code PIN</string>
+    <string name="settings_create_button">Créer PIN</string>
     <string name="verify_pin">Renseignez le code PIN</string>
     <string name="settings_goback_button">Retour</string>
     <string name="verify_pin_explanation">Vous devez renseigner votre code PIN pour accèder aux paramètres. Si vous l\'avez oublié, vous pouvez réinitialiser les paramètres.</string>
     <string name="settings_verifypin_button">Vérifier PIN</string>
     <string name="settings_reset_button">Réinitialiser tous les paramètres</string>
+    <string name="title_activity_data_viewer">Visualisation données saisies</string>
+    <string name="view_data_button">Visualiser mes données</string>
 </resources>
