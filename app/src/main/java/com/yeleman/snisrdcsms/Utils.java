@@ -294,7 +294,7 @@ public class Utils {
     }
 
     public static String percentFormat(double number, boolean addPercentSign) {
-        if (number < 1 && addPercentSign) {
+        if (number <= 1 && addPercentSign) {
             number = number * 100;
         }
         String formatted = String.format(Locale.FRANCE, "%,.0f", number);

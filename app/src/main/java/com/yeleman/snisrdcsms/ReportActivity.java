@@ -58,7 +58,7 @@ public class ReportActivity extends CheckedFormActivity {
                     Utils.percentFormat(DataValue.getCompletionPercentage(), true)));
 
             progressBar.setProgress(DataValue.countNonNull().intValue());
-            progressBar.setMax( DataValue.countAll().intValue());
+            progressBar.setMax(DataValue.countAll().intValue());
         }
         submitButton.setText(getString(R.string.submit_progress_button));
     }
