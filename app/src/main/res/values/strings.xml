@@ -26,7 +26,7 @@
     <string name="submit">Envoyer</string>
     <string name="cancel">Retour</string>
     <string name="password_dialog_title">Identification</string>
-    <string name="password_dialog_text">Merci de renseigner vos identifiants DHIS pour transmettre le rapport %1$s</string>
+    <string name="password_dialog_text">Merci de renseigner vos informations pour transmettre le rapport %1$s</string>
 
     <!-- menu items -->
     <string name="menu_about">Aide</string>
