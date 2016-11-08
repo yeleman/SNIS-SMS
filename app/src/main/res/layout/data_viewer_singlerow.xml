@@ -2,17 +2,44 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
     <TextView
-        android:padding="2dp"
         android:id="@+id/tv_label"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.7"/>
+        android:text="Cas suspects sdfjd djdjd kdkd dkkdknjdjdjd djdjd NFFJJ"
+        android:layout_weight=".8"
+        android:maxLines="1"
+        android:padding="5dp" />
+
+    <View style="@style/Divider"
+        android:id="@+id/bar_category_view"
+        android:visibility="gone" />
+
     <TextView
-        android:padding="2dp"
-        android:id="@+id/tv_value"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_category_label"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="0.3"/>
+        android:text="HAS"
+        android:layout_weight=".15"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:visibility="gone"/>
+
+    <View style="@style/Divider"/>
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="99 999"
+        android:gravity="right"
+        android:maxLines="1"
+        android:maxWidth="60dp"
+        android:minWidth="60dp"
+        android:layout_weight=".15"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp" />
 </TableRow>

@@ -162,7 +162,11 @@ public class DataViewerActivity extends CheckedFormActivity {
 
             String label = dataValue.getActualDataElement().getLabel();
             if (section.hasMultipleCategories()) {
-                label = String.format(Locale.FRANCE, "%1$s | %2$s", label, dataValue.getActualCategory().getLabel());
+                TextView labelCategoryTextView = (TextView) rowView.findViewById(R.id.tv_category_label);
+                labelCategoryTextView.setVisibility(View.VISIBLE);
+                labelCategoryTextView.setText(dataValue.getActualCategory().getLabel());
+                View barCategoryView = (View) rowView.findViewById(R.id.bar_category_view);
+                barCategoryView.setVisibility(View.VISIBLE);
             }
             labelTextView.setText(label);
             valueTextView.setText(dataValue.getDisplayValue());
