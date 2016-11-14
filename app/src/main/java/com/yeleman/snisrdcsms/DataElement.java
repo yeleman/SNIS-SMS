@@ -26,7 +26,12 @@ public class DataElement extends SugarRecord {
     }
 
     public static DataElement findByDHISId(String dhisId) {
-        return DataElement.find(DataElement.class, "DHIS_ID = ?", dhisId).get(0);
+        try {
+            return DataElement.find(DataElement.class, "DHIS_ID = ?", dhisId).get(0);
+        } catch (IndexOutOfBoundsException ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     public static Long create(String dhisId, String label, Integer order) {
@@ -40,6 +45,10 @@ public class DataElement extends SugarRecord {
 
     public String getDhisId() {
         return dhisId;
+    }
+
+    public String getStringId() {
+        return String.valueOf(getId());
     }
 
     void setLabel(String label) {

@@ -1,494 +1,4 @@
 {
-    "name": "Rapport mensuel Paludisme",
-    "sections": [
-        {
-            "name": "Prise en charge Paludisme: 0-11 mois",
-            "category": {
-                "id": "c6Vcc1gEs8R",
-                "label": "0-11 mois"
-            },
-            "id": "palu_c6Vcc1gEs8R",
-            "dataElements": [
-                {
-                    "id": "vLN9HID1Xc8",
-                    "label": "Cas suspects"
-                },
-                {
-                    "id": "vKSGLvGFW36",
-                    "label": "TDR r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "FjHEYw58Qna",
-                    "label": "TDR positifs"
-                },
-                {
-                    "id": "s9CR5R6WiV2",
-                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
-                },
-                {
-                    "id": "UtqxoYVFzch",
-                    "label": "Goutte \u00e9paisses positives"
-                },
-                {
-                    "id": "kxH5bcKvBJg",
-                    "label": "Frottis mince r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "hRoa1eyh2Ym",
-                    "label": "Cas simples confirm\u00e9s"
-                },
-                {
-                    "id": "EmN24I6TAfI",
-                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "ugs0O8ASTxp",
-                    "label": "Cas graves confirm\u00e9s"
-                },
-                {
-                    "id": "zaVEWaYtpce",
-                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "k8w3aoYQYIw",
-                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                },
-                {
-                    "id": "FZtICKIy5s2",
-                    "label": "Cas simples non confirm\u00e9s"
-                },
-                {
-                    "id": "kcMgmJfNNpG",
-                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "mMw1F0c7LT3",
-                    "label": "Cas graves non confirm\u00e9s"
-                },
-                {
-                    "id": "MdDQw9FWID4",
-                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "Zn3nsY2BWTe",
-                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                }
-            ]
-        },
-        {
-            "name": "Prise en charge Paludisme: 12-59 mois",
-            "category": {
-                "id": "sw9YcaDlVGG",
-                "label": "12-59 mois"
-            },
-            "id": "palu_sw9YcaDlVGG",
-            "dataElements": [
-                {
-                    "id": "vLN9HID1Xc8",
-                    "label": "Cas suspects"
-                },
-                {
-                    "id": "vKSGLvGFW36",
-                    "label": "TDR r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "FjHEYw58Qna",
-                    "label": "TDR positifs"
-                },
-                {
-                    "id": "s9CR5R6WiV2",
-                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
-                },
-                {
-                    "id": "UtqxoYVFzch",
-                    "label": "Goutte \u00e9paisses positives"
-                },
-                {
-                    "id": "kxH5bcKvBJg",
-                    "label": "Frottis mince r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "hRoa1eyh2Ym",
-                    "label": "Cas simples confirm\u00e9s"
-                },
-                {
-                    "id": "EmN24I6TAfI",
-                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "ugs0O8ASTxp",
-                    "label": "Cas graves confirm\u00e9s"
-                },
-                {
-                    "id": "zaVEWaYtpce",
-                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "k8w3aoYQYIw",
-                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                },
-                {
-                    "id": "FZtICKIy5s2",
-                    "label": "Cas simples non confirm\u00e9s"
-                },
-                {
-                    "id": "kcMgmJfNNpG",
-                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "mMw1F0c7LT3",
-                    "label": "Cas graves non confirm\u00e9s"
-                },
-                {
-                    "id": "MdDQw9FWID4",
-                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "Zn3nsY2BWTe",
-                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                }
-            ]
-        },
-        {
-            "name": "Prise en charge Paludisme: 5-14 ans",
-            "category": {
-                "id": "R9ddZgAPS9K",
-                "label": "5-14 ans"
-            },
-            "id": "palu_R9ddZgAPS9K",
-            "dataElements": [
-                {
-                    "id": "vLN9HID1Xc8",
-                    "label": "Cas suspects"
-                },
-                {
-                    "id": "vKSGLvGFW36",
-                    "label": "TDR r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "FjHEYw58Qna",
-                    "label": "TDR positifs"
-                },
-                {
-                    "id": "s9CR5R6WiV2",
-                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
-                },
-                {
-                    "id": "UtqxoYVFzch",
-                    "label": "Goutte \u00e9paisses positives"
-                },
-                {
-                    "id": "kxH5bcKvBJg",
-                    "label": "Frottis mince r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "hRoa1eyh2Ym",
-                    "label": "Cas simples confirm\u00e9s"
-                },
-                {
-                    "id": "EmN24I6TAfI",
-                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "ugs0O8ASTxp",
-                    "label": "Cas graves confirm\u00e9s"
-                },
-                {
-                    "id": "zaVEWaYtpce",
-                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "k8w3aoYQYIw",
-                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                },
-                {
-                    "id": "FZtICKIy5s2",
-                    "label": "Cas simples non confirm\u00e9s"
-                },
-                {
-                    "id": "kcMgmJfNNpG",
-                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "mMw1F0c7LT3",
-                    "label": "Cas graves non confirm\u00e9s"
-                },
-                {
-                    "id": "MdDQw9FWID4",
-                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "Zn3nsY2BWTe",
-                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                }
-            ]
-        },
-        {
-            "name": "Prise en charge Paludisme: 15 ans et plus",
-            "category": {
-                "id": "PINN036bZHB",
-                "label": "15 ans +"
-            },
-            "id": "palu_PINN036bZHB",
-            "dataElements": [
-                {
-                    "id": "vLN9HID1Xc8",
-                    "label": "Cas suspects"
-                },
-                {
-                    "id": "vKSGLvGFW36",
-                    "label": "TDR r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "FjHEYw58Qna",
-                    "label": "TDR positifs"
-                },
-                {
-                    "id": "s9CR5R6WiV2",
-                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
-                },
-                {
-                    "id": "UtqxoYVFzch",
-                    "label": "Goutte \u00e9paisses positives"
-                },
-                {
-                    "id": "kxH5bcKvBJg",
-                    "label": "Frottis mince r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "hRoa1eyh2Ym",
-                    "label": "Cas simples confirm\u00e9s"
-                },
-                {
-                    "id": "EmN24I6TAfI",
-                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "ugs0O8ASTxp",
-                    "label": "Cas graves confirm\u00e9s"
-                },
-                {
-                    "id": "zaVEWaYtpce",
-                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "k8w3aoYQYIw",
-                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                },
-                {
-                    "id": "FZtICKIy5s2",
-                    "label": "Cas simples non confirm\u00e9s"
-                },
-                {
-                    "id": "kcMgmJfNNpG",
-                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "mMw1F0c7LT3",
-                    "label": "Cas graves non confirm\u00e9s"
-                },
-                {
-                    "id": "MdDQw9FWID4",
-                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "Zn3nsY2BWTe",
-                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                }
-            ]
-        },
-        {
-            "name": "Prise en charge Paludisme: Femmes enceintes",
-            "category": {
-                "id": "iTrugaNzkjx",
-                "label": "Femmes enceintes"
-            },
-            "id": "palu_iTrugaNzkjx",
-            "dataElements": [
-                {
-                    "id": "vLN9HID1Xc8",
-                    "label": "Cas suspects"
-                },
-                {
-                    "id": "vKSGLvGFW36",
-                    "label": "TDR r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "FjHEYw58Qna",
-                    "label": "TDR positifs"
-                },
-                {
-                    "id": "s9CR5R6WiV2",
-                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
-                },
-                {
-                    "id": "UtqxoYVFzch",
-                    "label": "Goutte \u00e9paisses positives"
-                },
-                {
-                    "id": "kxH5bcKvBJg",
-                    "label": "Frottis mince r\u00e9alis\u00e9s"
-                },
-                {
-                    "id": "hRoa1eyh2Ym",
-                    "label": "Cas simples confirm\u00e9s"
-                },
-                {
-                    "id": "EmN24I6TAfI",
-                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "ugs0O8ASTxp",
-                    "label": "Cas graves confirm\u00e9s"
-                },
-                {
-                    "id": "zaVEWaYtpce",
-                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "k8w3aoYQYIw",
-                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                },
-                {
-                    "id": "FZtICKIy5s2",
-                    "label": "Cas simples non confirm\u00e9s"
-                },
-                {
-                    "id": "kcMgmJfNNpG",
-                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "mMw1F0c7LT3",
-                    "label": "Cas graves non confirm\u00e9s"
-                },
-                {
-                    "id": "MdDQw9FWID4",
-                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
-                },
-                {
-                    "id": "Zn3nsY2BWTe",
-                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
-                }
-            ]
-        },
-        {
-            "categories": [
-                {
-                    "id": "BazLEoJDKQj",
-                    "label": "AS"
-                },
-                {
-                    "id": "LkZ6wqcr1ub",
-                    "label": "HAS"
-                },
-                {
-                    "id": "QuHN4zVYSfJ",
-                    "label": "ZS"
-                },
-                {
-                    "id": "ygvzYv6zXoI",
-                    "label": "HZ"
-                }
-            ],
-            "name": "CPN: Consultations pr\u00e9natales",
-            "id": "cpn",
-            "dataElements": [
-                {
-                    "id": "er8SOYaoMfI",
-                    "label": "Visites CPN 1"
-                },
-                {
-                    "id": "kMms8hj4vov",
-                    "label": "Visites CPN 2"
-                },
-                {
-                    "id": "AqM4VskBwXe",
-                    "label": "Visites CPN 3"
-                },
-                {
-                    "id": "HQv2vd5iRuf",
-                    "label": "Visites CPN 4"
-                },
-                {
-                    "id": "PAyx7SSU73M",
-                    "label": "Femmes ayant re\u00e7u une MILD en CPN"
-                },
-                {
-                    "id": "YXyE6qEg2PK",
-                    "label": "Femmes ayant re\u00e7u SP1 en CPN"
-                },
-                {
-                    "id": "R46cos0mxgZ",
-                    "label": "Femmes ayant re\u00e7u SP2 en CPN"
-                },
-                {
-                    "id": "vJO02Spzsqt",
-                    "label": "Femmes ayant re\u00e7u SP3 en CPN"
-                }
-            ]
-        },
-        {
-            "categories": [
-                {
-                    "id": "BazLEoJDKQj",
-                    "label": "AS"
-                },
-                {
-                    "id": "LkZ6wqcr1ub",
-                    "label": "HAS"
-                },
-                {
-                    "id": "QuHN4zVYSfJ",
-                    "label": "ZS"
-                },
-                {
-                    "id": "ygvzYv6zXoI",
-                    "label": "HZ"
-                }
-            ],
-            "name": "CPS: Consultations pr\u00e9scolaires",
-            "id": "cps",
-            "dataElements": [
-                {
-                    "id": "xJtxOvxmLHk",
-                    "label": "CPS 1 (0-11 mois)"
-                },
-                {
-                    "id": "WP28pNSUt6c",
-                    "label": "CPS 2+ (12-59 mois)"
-                }
-            ]
-        },
-        {
-            "name": "MILD",
-            "id": "mild",
-            "dataElements": [
-                {
-                    "id": "OTl0KHyNjKC",
-                    "label": "Enfants 0-11 mois ayant re\u00e7u une MILD en CPS"
-                }
-            ]
-        }
-    ],
-    "version": 2,
-    "organisationUnits": [
-        {
-            "id": "F7uEE2Y2TYK",
-            "label": "CME Barumbu"
-        },
-        {
-            "id": "BDbFlRcCtA1",
-            "label": "CS Tembo"
-        },
-        {
-            "id": "PEUi0lksb3r",
-            "label": "CS Sainte Scolastique"
-        },
-        {
-            "id": "i206xocgYtA",
-            "label": "CS Kibangu"
-        }
-    ],
     "smsFormat": [
         "vLN9HID1Xc8.c6Vcc1gEs8R",
         "vKSGLvGFW36.c6Vcc1gEs8R",
@@ -613,5 +123,645 @@
         "OTl0KHyNjKC"
     ],
     "keyword": "palu",
-    "datasetId": "dnhLKSoK4q9"
+    "sections": [
+        {
+            "id": "palu_c6Vcc1gEs8R",
+            "dataElements": [
+                {
+                    "id": "vLN9HID1Xc8",
+                    "label": "Cas suspects"
+                },
+                {
+                    "id": "vKSGLvGFW36",
+                    "label": "TDR r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "FjHEYw58Qna",
+                    "label": "TDR positifs"
+                },
+                {
+                    "id": "s9CR5R6WiV2",
+                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
+                },
+                {
+                    "id": "UtqxoYVFzch",
+                    "label": "Goutte \u00e9paisses positives"
+                },
+                {
+                    "id": "kxH5bcKvBJg",
+                    "label": "Frottis mince r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "hRoa1eyh2Ym",
+                    "label": "Cas simples confirm\u00e9s"
+                },
+                {
+                    "id": "EmN24I6TAfI",
+                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "ugs0O8ASTxp",
+                    "label": "Cas graves confirm\u00e9s"
+                },
+                {
+                    "id": "zaVEWaYtpce",
+                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "k8w3aoYQYIw",
+                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                },
+                {
+                    "id": "FZtICKIy5s2",
+                    "label": "Cas simples non confirm\u00e9s"
+                },
+                {
+                    "id": "kcMgmJfNNpG",
+                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "mMw1F0c7LT3",
+                    "label": "Cas graves non confirm\u00e9s"
+                },
+                {
+                    "id": "MdDQw9FWID4",
+                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "Zn3nsY2BWTe",
+                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                }
+            ],
+            "name": "Prise en charge Paludisme: 0-11 mois",
+            "category": {
+                "id": "c6Vcc1gEs8R",
+                "label": "0-11m"
+            },
+            "checks": [
+                {
+                    "left": "UtqxoYVFzch.c6Vcc1gEs8R",
+                    "operator": "lte",
+                    "right": "s9CR5R6WiV2.c6Vcc1gEs8R"
+                },
+                {
+                    "left": "s9CR5R6WiV2.c6Vcc1gEs8R",
+                    "operator": "lte",
+                    "right": "vLN9HID1Xc8.c6Vcc1gEs8R"
+                },
+                {
+                    "left": "EmN24I6TAfI.c6Vcc1gEs8R",
+                    "operator": "lte",
+                    "right": "hRoa1eyh2Ym.c6Vcc1gEs8R"
+                },
+                {
+                    "left": "FjHEYw58Qna.c6Vcc1gEs8R",
+                    "operator": "lte",
+                    "right": "vKSGLvGFW36.c6Vcc1gEs8R"
+                },
+                {
+                    "left": "vKSGLvGFW36.c6Vcc1gEs8R",
+                    "operator": "lte",
+                    "right": "vLN9HID1Xc8.c6Vcc1gEs8R"
+                }
+            ]
+        },
+        {
+            "id": "palu_sw9YcaDlVGG",
+            "dataElements": [
+                {
+                    "id": "vLN9HID1Xc8",
+                    "label": "Cas suspects"
+                },
+                {
+                    "id": "vKSGLvGFW36",
+                    "label": "TDR r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "FjHEYw58Qna",
+                    "label": "TDR positifs"
+                },
+                {
+                    "id": "s9CR5R6WiV2",
+                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
+                },
+                {
+                    "id": "UtqxoYVFzch",
+                    "label": "Goutte \u00e9paisses positives"
+                },
+                {
+                    "id": "kxH5bcKvBJg",
+                    "label": "Frottis mince r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "hRoa1eyh2Ym",
+                    "label": "Cas simples confirm\u00e9s"
+                },
+                {
+                    "id": "EmN24I6TAfI",
+                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "ugs0O8ASTxp",
+                    "label": "Cas graves confirm\u00e9s"
+                },
+                {
+                    "id": "zaVEWaYtpce",
+                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "k8w3aoYQYIw",
+                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                },
+                {
+                    "id": "FZtICKIy5s2",
+                    "label": "Cas simples non confirm\u00e9s"
+                },
+                {
+                    "id": "kcMgmJfNNpG",
+                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "mMw1F0c7LT3",
+                    "label": "Cas graves non confirm\u00e9s"
+                },
+                {
+                    "id": "MdDQw9FWID4",
+                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "Zn3nsY2BWTe",
+                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                }
+            ],
+            "name": "Prise en charge Paludisme: 12-59 mois",
+            "category": {
+                "id": "sw9YcaDlVGG",
+                "label": "12-59m"
+            },
+            "checks": [
+                {
+                    "left": "UtqxoYVFzch.sw9YcaDlVGG",
+                    "operator": "lte",
+                    "right": "s9CR5R6WiV2.sw9YcaDlVGG"
+                },
+                {
+                    "left": "s9CR5R6WiV2.sw9YcaDlVGG",
+                    "operator": "lte",
+                    "right": "vLN9HID1Xc8.sw9YcaDlVGG"
+                },
+                {
+                    "left": "EmN24I6TAfI.sw9YcaDlVGG",
+                    "operator": "lte",
+                    "right": "hRoa1eyh2Ym.sw9YcaDlVGG"
+                },
+                {
+                    "left": "FjHEYw58Qna.sw9YcaDlVGG",
+                    "operator": "lte",
+                    "right": "vKSGLvGFW36.sw9YcaDlVGG"
+                },
+                {
+                    "left": "vKSGLvGFW36.sw9YcaDlVGG",
+                    "operator": "lte",
+                    "right": "vLN9HID1Xc8.sw9YcaDlVGG"
+                }
+            ]
+        },
+        {
+            "id": "palu_R9ddZgAPS9K",
+            "dataElements": [
+                {
+                    "id": "vLN9HID1Xc8",
+                    "label": "Cas suspects"
+                },
+                {
+                    "id": "vKSGLvGFW36",
+                    "label": "TDR r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "FjHEYw58Qna",
+                    "label": "TDR positifs"
+                },
+                {
+                    "id": "s9CR5R6WiV2",
+                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
+                },
+                {
+                    "id": "UtqxoYVFzch",
+                    "label": "Goutte \u00e9paisses positives"
+                },
+                {
+                    "id": "kxH5bcKvBJg",
+                    "label": "Frottis mince r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "hRoa1eyh2Ym",
+                    "label": "Cas simples confirm\u00e9s"
+                },
+                {
+                    "id": "EmN24I6TAfI",
+                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "ugs0O8ASTxp",
+                    "label": "Cas graves confirm\u00e9s"
+                },
+                {
+                    "id": "zaVEWaYtpce",
+                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "k8w3aoYQYIw",
+                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                },
+                {
+                    "id": "FZtICKIy5s2",
+                    "label": "Cas simples non confirm\u00e9s"
+                },
+                {
+                    "id": "kcMgmJfNNpG",
+                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "mMw1F0c7LT3",
+                    "label": "Cas graves non confirm\u00e9s"
+                },
+                {
+                    "id": "MdDQw9FWID4",
+                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "Zn3nsY2BWTe",
+                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                }
+            ],
+            "name": "Prise en charge Paludisme: 5-14 ans",
+            "category": {
+                "id": "R9ddZgAPS9K",
+                "label": "5-14a"
+            },
+            "checks": [
+                {
+                    "left": "vKSGLvGFW36.R9ddZgAPS9K",
+                    "operator": "lte",
+                    "right": "vLN9HID1Xc8.R9ddZgAPS9K"
+                }
+            ]
+        },
+        {
+            "id": "palu_PINN036bZHB",
+            "dataElements": [
+                {
+                    "id": "vLN9HID1Xc8",
+                    "label": "Cas suspects"
+                },
+                {
+                    "id": "vKSGLvGFW36",
+                    "label": "TDR r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "FjHEYw58Qna",
+                    "label": "TDR positifs"
+                },
+                {
+                    "id": "s9CR5R6WiV2",
+                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
+                },
+                {
+                    "id": "UtqxoYVFzch",
+                    "label": "Goutte \u00e9paisses positives"
+                },
+                {
+                    "id": "kxH5bcKvBJg",
+                    "label": "Frottis mince r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "hRoa1eyh2Ym",
+                    "label": "Cas simples confirm\u00e9s"
+                },
+                {
+                    "id": "EmN24I6TAfI",
+                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "ugs0O8ASTxp",
+                    "label": "Cas graves confirm\u00e9s"
+                },
+                {
+                    "id": "zaVEWaYtpce",
+                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "k8w3aoYQYIw",
+                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                },
+                {
+                    "id": "FZtICKIy5s2",
+                    "label": "Cas simples non confirm\u00e9s"
+                },
+                {
+                    "id": "kcMgmJfNNpG",
+                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "mMw1F0c7LT3",
+                    "label": "Cas graves non confirm\u00e9s"
+                },
+                {
+                    "id": "MdDQw9FWID4",
+                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "Zn3nsY2BWTe",
+                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                }
+            ],
+            "name": "Prise en charge Paludisme: 15 ans et plus",
+            "category": {
+                "id": "PINN036bZHB",
+                "label": "15a+"
+            },
+            "checks": [
+                {
+                    "left": "FjHEYw58Qna.PINN036bZHB",
+                    "operator": "lte",
+                    "right": "vKSGLvGFW36.PINN036bZHB"
+                },
+                {
+                    "left": "vKSGLvGFW36.PINN036bZHB",
+                    "operator": "lte",
+                    "right": "vLN9HID1Xc8.PINN036bZHB"
+                }
+            ]
+        },
+        {
+            "id": "palu_iTrugaNzkjx",
+            "dataElements": [
+                {
+                    "id": "vLN9HID1Xc8",
+                    "label": "Cas suspects"
+                },
+                {
+                    "id": "vKSGLvGFW36",
+                    "label": "TDR r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "FjHEYw58Qna",
+                    "label": "TDR positifs"
+                },
+                {
+                    "id": "s9CR5R6WiV2",
+                    "label": "Goutte \u00e9paisses r\u00e9alis\u00e9es"
+                },
+                {
+                    "id": "UtqxoYVFzch",
+                    "label": "Goutte \u00e9paisses positives"
+                },
+                {
+                    "id": "kxH5bcKvBJg",
+                    "label": "Frottis mince r\u00e9alis\u00e9s"
+                },
+                {
+                    "id": "hRoa1eyh2Ym",
+                    "label": "Cas simples confirm\u00e9s"
+                },
+                {
+                    "id": "EmN24I6TAfI",
+                    "label": "Cas simples confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "ugs0O8ASTxp",
+                    "label": "Cas graves confirm\u00e9s"
+                },
+                {
+                    "id": "zaVEWaYtpce",
+                    "label": "Cas graves confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "k8w3aoYQYIw",
+                    "label": "Cas graves confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                },
+                {
+                    "id": "FZtICKIy5s2",
+                    "label": "Cas simples non confirm\u00e9s"
+                },
+                {
+                    "id": "kcMgmJfNNpG",
+                    "label": "Cas simples non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "mMw1F0c7LT3",
+                    "label": "Cas graves non confirm\u00e9s"
+                },
+                {
+                    "id": "MdDQw9FWID4",
+                    "label": "Cas graves non confirm\u00e9s trait\u00e9s"
+                },
+                {
+                    "id": "Zn3nsY2BWTe",
+                    "label": "Cas graves non confirm\u00e9s d\u00e9c\u00e9d\u00e9s"
+                }
+            ],
+            "name": "Prise en charge Paludisme: Femmes enceintes",
+            "category": {
+                "id": "iTrugaNzkjx",
+                "label": "F.E"
+            },
+            "checks": []
+        },
+        {
+            "id": "cpn",
+            "dataElements": [
+                {
+                    "id": "er8SOYaoMfI",
+                    "label": "Visites CPN 1"
+                },
+                {
+                    "id": "kMms8hj4vov",
+                    "label": "Visites CPN 2"
+                },
+                {
+                    "id": "AqM4VskBwXe",
+                    "label": "Visites CPN 3"
+                },
+                {
+                    "id": "HQv2vd5iRuf",
+                    "label": "Visites CPN 4"
+                },
+                {
+                    "id": "PAyx7SSU73M",
+                    "label": "F.E ayant re\u00e7u une MILD"
+                },
+                {
+                    "id": "YXyE6qEg2PK",
+                    "label": "F.E ayant re\u00e7u SP1"
+                },
+                {
+                    "id": "R46cos0mxgZ",
+                    "label": "F.E ayant re\u00e7u SP2"
+                },
+                {
+                    "id": "vJO02Spzsqt",
+                    "label": "F.E ayant re\u00e7u SP3"
+                }
+            ],
+            "categories": [
+                {
+                    "id": "BazLEoJDKQj",
+                    "label": "AS"
+                },
+                {
+                    "id": "LkZ6wqcr1ub",
+                    "label": "HAS"
+                },
+                {
+                    "id": "QuHN4zVYSfJ",
+                    "label": "ZS"
+                },
+                {
+                    "id": "ygvzYv6zXoI",
+                    "label": "HZ"
+                }
+            ],
+            "name": "CPN: Consultations pr\u00e9natales",
+            "checks": [
+                {
+                    "left": "PAyx7SSU73M.BazLEoJDKQj",
+                    "operator": "lte",
+                    "right": "er8SOYaoMfI.BazLEoJDKQj"
+                },
+                {
+                    "left": "PAyx7SSU73M.LkZ6wqcr1ub",
+                    "operator": "lte",
+                    "right": "er8SOYaoMfI.LkZ6wqcr1ub"
+                },
+                {
+                    "left": "PAyx7SSU73M.ygvzYv6zXoI",
+                    "operator": "lte",
+                    "right": "er8SOYaoMfI.ygvzYv6zXoI"
+                },
+                {
+                    "left": "YXyE6qEg2PK.BazLEoJDKQj",
+                    "operator": "lte",
+                    "right": "er8SOYaoMfI.BazLEoJDKQj"
+                },
+                {
+                    "left": "YXyE6qEg2PK.LkZ6wqcr1ub",
+                    "operator": "lte",
+                    "right": "er8SOYaoMfI.LkZ6wqcr1ub"
+                },
+                {
+                    "left": "YXyE6qEg2PK.ygvzYv6zXoI",
+                    "operator": "lte",
+                    "right": "er8SOYaoMfI.ygvzYv6zXoI"
+                }
+            ]
+        },
+        {
+            "id": "cps",
+            "dataElements": [
+                {
+                    "id": "xJtxOvxmLHk",
+                    "label": "CPS 1 (0-11 mois)"
+                },
+                {
+                    "id": "WP28pNSUt6c",
+                    "label": "CPS 2+ (12-59 mois)"
+                }
+            ],
+            "categories": [
+                {
+                    "id": "BazLEoJDKQj",
+                    "label": "AS"
+                },
+                {
+                    "id": "LkZ6wqcr1ub",
+                    "label": "HAS"
+                },
+                {
+                    "id": "QuHN4zVYSfJ",
+                    "label": "ZS"
+                },
+                {
+                    "id": "ygvzYv6zXoI",
+                    "label": "HZ"
+                }
+            ],
+            "name": "CPS: Consultations pr\u00e9scolaires",
+            "checks": []
+        },
+        {
+            "id": "mild",
+            "dataElements": [
+                {
+                    "id": "OTl0KHyNjKC",
+                    "label": "Enfants 0-11 mois ayant re\u00e7u une MILD en CPS"
+                }
+            ],
+            "name": "MILD",
+            "checks": []
+        }
+    ],
+    "version": 2,
+    "datasetId": "dnhLKSoK4q9",
+    "organisationUnits": [
+        {
+            "id": "F7uEE2Y2TYK",
+            "label": "CME Barumbu"
+        },
+        {
+            "id": "BDbFlRcCtA1",
+            "label": "CS Tembo"
+        },
+        {
+            "id": "PEUi0lksb3r",
+            "label": "CS Sainte Scolastique"
+        },
+        {
+            "id": "i206xocgYtA",
+            "label": "CS Kibangu"
+        }
+    ],
+    "name": "Rapport mensuel Paludisme",
+    "checks": [
+        {
+            "left": "kxH5bcKvBJg.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "kxH5bcKvBJg.PINN036bZHB"
+        },
+        {
+            "left": "s9CR5R6WiV2.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "s9CR5R6WiV2.PINN036bZHB"
+        },
+        {
+            "left": "ugs0O8ASTxp.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "ugs0O8ASTxp.PINN036bZHB"
+        },
+        {
+            "left": "hRoa1eyh2Ym.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "hRoa1eyh2Ym.PINN036bZHB"
+        },
+        {
+            "left": "EmN24I6TAfI.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "EmN24I6TAfI.PINN036bZHB"
+        },
+        {
+            "left": "vLN9HID1Xc8.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "vLN9HID1Xc8.PINN036bZHB"
+        },
+        {
+            "left": "FjHEYw58Qna.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "FjHEYw58Qna.PINN036bZHB"
+        },
+        {
+            "left": "vKSGLvGFW36.iTrugaNzkjx",
+            "operator": "lte",
+            "right": "vKSGLvGFW36.PINN036bZHB"
+        }
+    ]
 }

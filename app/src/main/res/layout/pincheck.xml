@@ -10,18 +10,26 @@
         android:layout_height="wrap_content">
 
         <TextView
-            style="@style/textViewLabel"
-            android:text="@string/verify_pin"/>
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/verify_pin_explanation"/>
-        <EditText
-            style="@style/editText"
-            android:id="@+id/et_pin"
-            android:inputType="numberPassword"
-            android:maxLength="4"
-            android:imeOptions="actionDone" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_pin">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/verify_pin"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:hint="@string/settings_pin_hint"
+                android:maxLength="4"
+                android:imeOptions="actionDone" />
+        </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

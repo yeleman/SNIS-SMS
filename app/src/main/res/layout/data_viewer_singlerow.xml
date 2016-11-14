@@ -21,6 +21,7 @@
         android:id="@+id/tv_category_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
         android:text="HAS"
         android:layout_weight=".15"
         android:maxLines="1"

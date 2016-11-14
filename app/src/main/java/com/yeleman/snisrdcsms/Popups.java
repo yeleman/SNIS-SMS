@@ -44,12 +44,12 @@ public class Popups {
                                                        String title,
                                                        String message,
                                                        boolean cancelable) {
-        AlertDialog.Builder smsDialogBuilder = new AlertDialog.Builder(context);
-        smsDialogBuilder.setCancelable(cancelable);
-        smsDialogBuilder.setTitle(title);
-        smsDialogBuilder.setMessage(message);
-        smsDialogBuilder.setIcon(R.mipmap.ic_launcher);
-        return smsDialogBuilder;
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+        dialogBuilder.setCancelable(cancelable);
+        dialogBuilder.setTitle(title);
+        dialogBuilder.setMessage(message);
+        dialogBuilder.setIconAttribute(android.R.attr.alertDialogIcon);
+        return dialogBuilder;
     }
 
     public static AlertDialog getStandardDialog(final Activity activity,

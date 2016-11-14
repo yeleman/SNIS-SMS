@@ -81,6 +81,10 @@ public class DataValue extends SugarRecord {
         return value;
     }
 
+    public Integer getIntegerValue() {
+        return (getValue() == null) ? null : Integer.valueOf(getValue());
+    }
+
     public String getFormattedValue() {
         return getValue() == null ? Constants.MISSING_VALUE : getValue();
     }
@@ -91,13 +95,12 @@ public class DataValue extends SugarRecord {
 
     public void resetValue() { setValue(null); save(); }
 
-    public String getHumanId() {
+    public HumanId getHumanId() {
+        return new HumanId(this);
+    }
 
-        String humanId = getActualDataElement().getDhisId();
-        if (getCategoryId() == null) {
-            return humanId;
-        }
-        return humanId + "." + getActualCategory().getDhisId();
+    public String getHuman() {
+        return getHumanId().getHuman();
     }
 
     public static void resetAll() {
@@ -123,5 +126,17 @@ public class DataValue extends SugarRecord {
 
     public static Double getCompletionPercentage() {
         return Double.valueOf(countNonNull()) / Double.valueOf(countAll());
+    }
+
+    public boolean hasCategory() {
+        return getCategoryId() != null;
+    }
+
+    public String getLabel() {
+        return getActualDataElement().getLabel();
+    }
+
+    public String getFullLabel() {
+        return String.format("%1$s %2$s", getActualDataElement().getLabel(), getActualCategory().getLabel());
     }
 }

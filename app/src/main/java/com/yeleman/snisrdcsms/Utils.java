@@ -150,7 +150,7 @@ public class Utils {
     public static String buildIndexedDataSMSPart() {
         String smsContent = "";
         for(DataValue dataValue: DataValue.listAllFilled()) {
-            smsContent += String.format("%s=%s", dataValue.getHumanId(), dataValue.getValue()) + JSONFormParser.SMS_SPACER;
+            smsContent += String.format("%s=%s", dataValue.getHuman(), dataValue.getValue()) + JSONFormParser.SMS_SPACER;
 
         }
         return smsContent.trim();
@@ -304,7 +304,10 @@ public class Utils {
         return formatted;
     }
 
-    public static String numberFormat(int number) {
+    public static String numberFormat(Integer number) {
+        if (number == null) {
+            return "?";
+        }
         return String.format(Locale.FRANCE, "%,d", number);
     }
 

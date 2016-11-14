@@ -9,60 +9,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            style="@style/textViewLabel"
-            android:text="@string/settings_server_num"
-            android:layout_height="wrap_content" />
-        <EditText
-            style="@style/editText"
-            android:id="@+id/et_server_number"
-            android:hint="@string/settings_server_num"
-            android:inputType="number"
-            android:imeOptions="actionNext"/>
-        <TextView
-            style="@style/editText"
-            android:text="@string/settings_server_num_summary"/>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_server_number">
 
-        <TextView
-            style="@style/textViewLabel"
-            android:text="@string/settings_username" />
+            <TextView
+                android:text="@string/settings_server_num_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                style="@style/editText"
+                android:hint="@string/settings_server_num"
+                android:inputType="number"
+                android:imeOptions="actionNext"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            style="@style/editText"
-            android:id="@+id/et_username"
-            android:hint="@string/settings_username_hint"
-            android:imeOptions="actionNext" />
-        <TextView
-            style="@style/editText"
-            android:text="@string/settings_username_summary"/>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_username">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_username_summary" />
 
-        <TextView
-            style="@style/textViewLabel"
-            android:text="@string/settings_password"/>
-        <EditText
-            style="@style/editText"
-            android:inputType="textPassword"
-            android:id="@+id/et_password"
-            android:imeOptions="actionNext"
-            android:hint="@string/settings_password_hint"/>
-        <TextView
-            style="@style/editText"
-            android:text="@string/settings_password_summary"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/settings_username_hint"
+                android:imeOptions="actionNext" />
+        </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            style="@style/textViewLabel"
-            android:text="@string/settings_pin"/>
-        <EditText
-            style="@style/editText"
-            android:id="@+id/et_pin"
-            android:inputType="numberPassword"
-            android:maxLength="4"
-            android:imeOptions="actionDone"
-            android:hint="@string/settings_pin_hint" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_password">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_password_summary"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:imeOptions="actionNext"
+                android:hint="@string/settings_password_hint"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            style="@style/editText"
-            android:text="@string/settings_pin_summary"/>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_pin">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_pin"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:imeOptions="actionDone"
+                android:hint="@string/settings_pin_hint" />
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:text="@string/settings_check"

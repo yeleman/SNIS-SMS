@@ -161,4 +161,20 @@ public class Section extends SugarRecord {
     public String getProgression() {
         return String.format(Locale.FRANCE, "%d/%d", getFilledDataValuesNumber(), getExpectedValuesNumber());
     }
+
+    public static Section getFor(Long dataElementId, Long categoryId) {
+        if (categoryId == null) {
+            return Section.findWithQuery(
+                    Section.class,
+                    "SELECT s.* FROM DATA_ELEMENT_SECTION as des, SECTION as s " +
+                    "WHERE des.DATA_ELEMENT_ID=? AND s.ID=des.SECTION_ID;",
+                    String.valueOf(dataElementId)).get(0);
+        } else {
+            return Section.findWithQuery(
+                    Section.class,
+                    "SELECT s.* FROM SECTION as s, CATEGORY_SECTION as cs, DATA_ELEMENT_SECTION as des " +
+                    "WHERE cs.CATEGORY_ID = ? AND des.DATA_ELEMENT_ID = ? AND cs.SECTION_ID=des.SECTION_ID AND s.ID=cs.SECTION_ID;",
+                    String.valueOf(categoryId), String.valueOf(dataElementId)).get(0);
+        }
+    }
 }

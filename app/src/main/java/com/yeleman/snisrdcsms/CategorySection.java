@@ -29,11 +29,11 @@ public class CategorySection extends SugarRecord {
     }
 
     public static List<Category> getCategoriesFor(Long sectionId) {
-        List<Category> categories = new ArrayList<>();
-        for (CategorySection categorySection: Select.from(CategorySection.class).where(Condition.prop("SECTION_ID").eq(sectionId)).list()) {
-            categories.add(Category.findById(Category.class, categorySection.getCategoryId()));
-        }
-        return categories;
+        return Category.findWithQuery(
+                Category.class,
+                "SELECT * FROM CATEGORY WHERE ID IN " +
+                "(SELECT CATEGORY_ID FROM CATEGORY_SECTION WHERE SECTION_ID=?);",
+                String.valueOf(sectionId));
     }
 
     public void setCategoryId(Long categoryId) {

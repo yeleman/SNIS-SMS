@@ -13,6 +13,8 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds;
 import android.provider.ContactsContract.Data;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -27,10 +29,10 @@ import java.util.ArrayList;
 public class SettingsActivity extends CheckedFormActivity {
 
     private Button checkButton;
-    private EditText usernameField;
-    private EditText pinField;
-    private EditText serverPhoneNumberField;
-    private EditText passwordField;
+    private TextInputLayout usernameField;
+    private TextInputLayout pinField;
+    private TextInputLayout serverPhoneNumberField;
+    private TextInputLayout passwordField;
 
     String prefServerNumber;
     String prefUsername;
@@ -48,10 +50,10 @@ public class SettingsActivity extends CheckedFormActivity {
 
     protected void setupUI() {
 
-        serverPhoneNumberField = (EditText) findViewById(R.id.et_server_number);
-        usernameField = (EditText) findViewById(R.id.et_username);
-        pinField = (EditText) findViewById(R.id.et_pin);
-        passwordField = (EditText) findViewById(R.id.et_password);
+        serverPhoneNumberField = (TextInputLayout) findViewById(R.id.et_server_number);
+        usernameField = (TextInputLayout) findViewById(R.id.et_username);
+        pinField = (TextInputLayout) findViewById(R.id.et_pin);
+        passwordField = (TextInputLayout) findViewById(R.id.et_password);
         checkButton = (Button) findViewById(R.id.btn_check);
 
         loadPreferenceValues();
@@ -62,20 +64,20 @@ public class SettingsActivity extends CheckedFormActivity {
         setAssertNotEmpty(passwordField);
         setAssertPINAlike(pinField);
 
-        serverPhoneNumberField.setText(prefServerNumber);
-        usernameField.setText(prefUsername);
-        passwordField.setText(prefPassword);
-        pinField.setText(prefPinCode);
+        serverPhoneNumberField.getEditText().setText(prefServerNumber);
+        usernameField.getEditText().setText(prefUsername);
+        passwordField.getEditText().setText(prefPassword);
+        pinField.getEditText().setText(prefPinCode);
 
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!checkInputsAndCoherence()) { return; }
 
-                String serverNumber = stringFromField(serverPhoneNumberField);
-                String username = stringFromField(usernameField);
-                String password = stringFromField(passwordField);
-                String pinCode = stringFromField(pinField);
+                String serverNumber = stringFromField(serverPhoneNumberField.getEditText());
+                String username = stringFromField(usernameField.getEditText());
+                String password = stringFromField(passwordField.getEditText());
+                String pinCode = stringFromField(pinField.getEditText());
 
                 Boolean anyCredentialChanged = !(serverNumber.equals(prefServerNumber)
                                                  && username.equals(prefUsername)
@@ -239,10 +241,10 @@ public class SettingsActivity extends CheckedFormActivity {
 
     private void saveToPrefs() {
         final SharedPreferences.Editor prefsEditor = sharedPrefs.edit();
-        prefsEditor.putString(Constants.KEY_SERVER_PHONE_NUMBER, stringFromField(serverPhoneNumberField));
-        prefsEditor.putString(Constants.KEY_USERNAME, stringFromField(usernameField));
-        prefsEditor.putString(Constants.KEY_PASSWORD, stringFromField(passwordField));
-        prefsEditor.putString(Constants.KEY_PIN_CODE, stringFromField(pinField));
+        prefsEditor.putString(Constants.KEY_SERVER_PHONE_NUMBER, stringFromField(serverPhoneNumberField.getEditText()));
+        prefsEditor.putString(Constants.KEY_USERNAME, stringFromField(usernameField.getEditText()));
+        prefsEditor.putString(Constants.KEY_PASSWORD, stringFromField(passwordField.getEditText()));
+        prefsEditor.putString(Constants.KEY_PIN_CODE, stringFromField(pinField.getEditText()));
         prefsEditor.apply();
         loadPreferenceValues();
     }

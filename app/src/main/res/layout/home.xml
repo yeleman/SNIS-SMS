@@ -45,7 +45,8 @@
             android:textColor="@android:color/white"
             android:enabled="false"
             android:id="@+id/btn_start_reporting"
-            android:onClick="startReporting"/>
+            android:onClick="startReporting"
+            style="@android:style/Widget.Holo.Light.Button" />
 
         <LinearLayout
             android:visibility="gone"

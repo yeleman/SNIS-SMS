@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/btn_version"
-                android:textColor="@android:color/white"
+
                 android:text="@string/version_button_default_label"
                 android:gravity="center|center_vertical" />
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/btn_exportDB"
-                android:textColor="@android:color/white"
+
                 android:text="@string/export_database_text"
                 android:gravity="center|center_vertical" />
             <Button

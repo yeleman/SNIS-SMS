@@ -30,6 +30,10 @@ class JSONFormParserMixin {
     public static final String KEY_LABEL = "label";
     public static final String KEY_DATA_ELEMENTS = "dataElements";
     public static final String KEY_ORGANISATION_UNITS = "organisationUnits";
+    public static final String KEY_CHECKS = "checks";
+    public static final String KEY_OPERATOR = "operator";
+    public static final String KEY_LEFT = "left";
+    public static final String KEY_RIGHT = "right";
 
     public static final String SMS_SPACER = " ";
 
@@ -131,6 +135,7 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
     public void removePreviousData() {
         Log.d(TAG, "removePreviousData");
         // empty all models
+        SugarRecord.deleteAll(DataValidation.class);
         SugarRecord.deleteAll(Category.class);
         SugarRecord.deleteAll(CategorySection.class);
         SugarRecord.deleteAll(DataElement.class);
@@ -154,27 +159,27 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
             Log.d(TAG, "Created organisation unit with id="+organisationUnitId);
         }
 
-        // loops on groups
-        JSONArray groups = getJSONArray(jsonObject, "sections");
-        for(int i = 0; i< (groups != null ? groups.length() : 0); i++){
-            JSONObject group = groups.getJSONObject(i);
+        // loops on sections
+        JSONArray sections = getJSONArray(jsonObject, "sections");
+        for(int i = 0; i< (sections != null ? sections.length() : 0); i++){
+            JSONObject section = sections.getJSONObject(i);
             Log.d(TAG, "section("+i+")");
 
-            // record Group
+            // record Section
             String categoryType;
-            if (group.has(KEY_CATEGORY) || group.has(KEY_CATEGORIES)) {
-                categoryType = group.has(KEY_CATEGORY) ? Section.SINGLE_CATEGORY : Section.MULTIPLE_CATEGORIES;
+            if (section.has(KEY_CATEGORY) || section.has(KEY_CATEGORIES)) {
+                categoryType = section.has(KEY_CATEGORY) ? Section.SINGLE_CATEGORY : Section.MULTIPLE_CATEGORIES;
             } else {
                 categoryType = Section.NO_CATEGORY;
             }
             Long sectionId = Section.create(
-                    getString(group, KEY_ID),
-                    getString(group, KEY_NAME), categoryType, i);
-            Log.d(TAG, "Created section with id="+sectionId.toString()+": "+getString(group, KEY_NAME));
+                    getString(section, KEY_ID),
+                    getString(section, KEY_NAME), categoryType, i);
+            Log.d(TAG, "Created section with id="+sectionId.toString()+": "+getString(section, KEY_NAME));
 
             // record Category (single or multiple)
-            if (group.has(KEY_CATEGORY)) {
-                JSONObject category = group.getJSONObject(KEY_CATEGORY);
+            if (section.has(KEY_CATEGORY)) {
+                JSONObject category = section.getJSONObject(KEY_CATEGORY);
                 if (!Category.exists(getString(category, KEY_ID))) {
                     Long categoryId = Category.create(
                             getString(category, KEY_ID),
@@ -183,8 +188,8 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
                     CategorySection.create(categoryId, sectionId);
                     Log.d(TAG, "Created CategorySection with ids: "+categoryId.toString()+", "+sectionId);
                 }
-            } else if (group.has(KEY_CATEGORIES)) {
-                JSONArray categories = getJSONArray(group, KEY_CATEGORIES);
+            } else if (section.has(KEY_CATEGORIES)) {
+                JSONArray categories = getJSONArray(section, KEY_CATEGORIES);
                 for (int j = 0; j< (categories != null ? categories.length() : 0); j++) {
                     Log.d(TAG, "categories("+j+")");
                     JSONObject category = categories.getJSONObject(j);
@@ -203,7 +208,7 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
             }
 
             // record DataElement
-            JSONArray dataElements = getJSONArray(group, KEY_DATA_ELEMENTS);
+            JSONArray dataElements = getJSONArray(section, KEY_DATA_ELEMENTS);
             for (int k = 0; k< (dataElements != null ? dataElements.length() : 0); k++) {
                 Log.d(TAG, "dataelements("+k+")");
                 JSONObject dataElement = dataElements.getJSONObject(k);
@@ -219,6 +224,17 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
                 DataElementSection.create(dataElementId, sectionId);
                 Log.d(TAG, "Created DataElementGroup with ids: "+dataElementId.toString()+", "+sectionId);
             }
+
+            // store in-section validation checks
+            JSONArray s_checks = getJSONArray(section, "checks");
+            for(int l = 0; l< (s_checks != null ? s_checks.length() : 0); l++) {
+                JSONObject s_check = s_checks.getJSONObject(l);
+                Log.d(TAG, "s_check(" + l + ")");
+                DataValidation.create(sectionId,
+                        getString(s_check, KEY_OPERATOR),
+                        getString(s_check, KEY_LEFT),
+                        getString(s_check, KEY_RIGHT));
+            }
         }
 
         // record expected DataValue
@@ -232,6 +248,17 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
                 DataValue.create(dataElementSection.getDataElementId(), null, null);
                 Log.d(TAG, "Created DataValue with id="+dataElementSection.getDataElementId().toString()+": null");
             }
+        }
+
+        // store cross-section validation checks
+        JSONArray cs_checks = getJSONArray(jsonObject, "checks");
+        for(int i = 0; i< (cs_checks != null ? cs_checks.length() : 0); i++) {
+            JSONObject cs_check = cs_checks.getJSONObject(i);
+            Log.d(TAG, "cs_check(" + i + ")");
+            DataValidation.create(null,
+                         getString(cs_check, KEY_OPERATOR),
+                         getString(cs_check, KEY_LEFT),
+                         getString(cs_check, KEY_RIGHT));
         }
     }
 }

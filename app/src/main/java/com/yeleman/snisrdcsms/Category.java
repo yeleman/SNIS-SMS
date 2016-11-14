@@ -43,6 +43,10 @@ public class Category extends SugarRecord {
         return dhisId;
     }
 
+    public String getStringId() {
+        return String.valueOf(getId());
+    }
+
     void setLabel(String label) {
         this.label = label;
     }

@@ -118,4 +118,7 @@
     <string name="settings_reset_button">Réinitialiser tous les paramètres</string>
     <string name="title_activity_data_viewer">Visualisation données saisies</string>
     <string name="view_data_button">Visualiser mes données</string>
+    <string name="validation_dialog_title">Données incohérentes</string>
+    <string name="validation_dialog_text">Vous devez corrigez ces données incohérentes.</string>
+    <string name="validation_dialog_button">OK</string>
 </resources>

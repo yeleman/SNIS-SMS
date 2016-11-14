@@ -13,6 +13,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -34,7 +36,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class CheckedFormActivity extends Activity implements SMSUpdater {
+public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater {
 
     private final static String TAG = Constants.getLogTag("CheckedFormActivity");
 
@@ -90,15 +92,23 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         errorText.setTextColor(Color.RED);//just to highlight that this is an error
         errorText.setText(message);//changes the selected item text to this
     }
-	protected void addErrorToField(EditText editText, String message) {
-		editText.setError(message);
-		// editText.requestFocus();
-	}
+	protected void addErrorToField(TextView editText, String message) { editText.setError(message); }
+    protected void addErrorToField(TextInputLayout editText, String message) { editText.setError(message); }
 
     protected boolean doCheckAndProceed(boolean test, String error_msg, Spinner spinner) {
         if (test) {
             addErrorToField(spinner, error_msg);
             return false;
+        }
+        return true;
+    }
+
+    protected boolean doCheckAndProceed(boolean test, String error_msg, TextInputLayout editText) {
+        if (test) {
+            addErrorToField(editText, error_msg);
+            return false;
+        } else {
+            addErrorToField(editText, null);
         }
         return true;
     }
@@ -176,6 +186,12 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 		return doCheckAndProceed(test, error_msg, editText);
 	}
 
+    protected boolean assertNotEmpty(TextInputLayout inputLayout) {
+        boolean test = (inputLayout.getEditText().getText().toString().trim().length() == 0);
+        String error_msg = getString(R.string.error_field_empty);
+        return doCheckAndProceed(test, error_msg, inputLayout);
+    }
+
 	protected boolean assertAtLeastThisLong(EditText editText, int min_chars) {
 		boolean test = (editText.getText().toString().trim().length() < min_chars);
 		String error_msg = String.format(getString(R.string.error_field_min_chars),
@@ -211,12 +227,29 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return doCheckAndProceed(test, error_msg, editText);
     }
 
+    protected boolean assertPINCodeAlike(TextInputLayout inputLayout) {
+        String text = stringFromField(inputLayout.getEditText());
+        boolean test = (text.contains(" ") || text.length() != Constants.PIN_CODE_NUM_CHARS);
+        String error_msg = String.format(
+                getString(R.string.error_field_no_pin),
+                Constants.PIN_CODE_NUM_CHARS);
+        return doCheckAndProceed(test, error_msg, inputLayout);
+    }
+
     protected boolean assertPINCodeOK(EditText editText, String pinCode) {
         String text = editText.getText().toString();
         boolean test = !text.equals(pinCode);
 
         String error_msg = getString(R.string.error_pin_code);
         return doCheckAndProceed(test, error_msg, editText);
+    }
+
+    protected boolean assertPINCodeOK(TextInputLayout inputLayout, String pinCode) {
+        String text = inputLayout.getEditText().getText().toString();
+        boolean test = !text.equals(pinCode);
+
+        String error_msg = getString(R.string.error_pin_code);
+        return doCheckAndProceed(test, error_msg, inputLayout);
     }
 
     protected boolean assertUsernameAlike(EditText editText) {
@@ -233,6 +266,12 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return doCheckAndProceed(test, error_msg, editText);
     }
 
+    protected boolean assertPositiveIntegerOrNull(TextInputLayout inputLayout) {
+        boolean test = stringFromField(inputLayout.getEditText()).length() != 0 && (integerFromField(inputLayout.getEditText(), -1) < 0);
+        String error_msg = getString(R.string.error_field_positive_integer);
+        return doCheckAndProceed(test, error_msg, inputLayout);
+    }
+
 	protected boolean assertPositiveInteger(EditText editText) {
 		boolean test = (integerFromField(editText, -1) < 0);
 		String error_msg = getString(R.string.error_field_positive_integer);
@@ -245,12 +284,44 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 		return doCheckAndProceed(test, error_msg, editText);
 	}
 
+    /* dual fields (checks) assertions */
+    protected boolean assertLessThanOrEqualOrNull(EditText leftField, EditText rightField,
+                                                  DataValue leftDataValue, DataValue rightDataValue) {
+        String left_error_msg = "<= " + rightDataValue.getActualDataElement().getLabel();
+        String right_error_msg = ">= " + leftDataValue.getActualDataElement().getLabel();
+        boolean leftIsNull = stringFromField(leftField).length() != 0;
+        boolean rightIsNull = stringFromField(rightField).length() != 0;
+
+        boolean is_valid;
+        if (leftIsNull && rightIsNull) {
+            // exit without error if none is filled
+            is_valid = true;
+        } else {
+            is_valid = integerFromField(leftField) <= integerFromField(rightField);
+        }
+        doCheckAndProceed(!is_valid, left_error_msg, leftField);
+        doCheckAndProceed(!is_valid, right_error_msg, rightField);
+        return !is_valid;
+    }
+
 	/* Input Validation Checks (EventListener creators) */
 	protected void setAssertNotEmpty(final EditText editText) {
     	updateFieldCheckedStatus(editText, false);
     	editText.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
             	updateFieldCheckedStatus(editText, assertNotEmpty(editText));
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+    }
+
+    protected void setAssertNotEmpty(final TextInputLayout inputLayout) {
+        updateFieldCheckedStatus(inputLayout.getEditText(), true);
+        inputLayout.getEditText().addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                updateFieldCheckedStatus(inputLayout.getEditText(), assertNotEmpty(inputLayout));
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -283,6 +354,18 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         });
     }
 
+    protected void setAssertPositiveIntegerOrNull(final TextInputLayout inputLayout) {
+        updateFieldCheckedStatus(inputLayout.getEditText(), true);
+        inputLayout.getEditText().addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                updateFieldCheckedStatus(inputLayout.getEditText(), assertPositiveIntegerOrNull(inputLayout));
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+    }
+
     protected void setAssertPositiveFloat(final EditText editText) {
 
     	updateFieldCheckedStatus(editText, false);
@@ -295,11 +378,11 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         });
     }
 
-    protected void setAssertPINAlike(final EditText editText) {
-        updateFieldCheckedStatus(editText, false);
-        editText.addTextChangedListener(new TextWatcher() {
+    protected void setAssertPINAlike(final TextInputLayout inputLayout) {
+        updateFieldCheckedStatus(inputLayout.getEditText(), false);
+        inputLayout.getEditText().addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
-                updateFieldCheckedStatus(editText, assertPINCodeAlike(editText));
+                updateFieldCheckedStatus(inputLayout.getEditText(), assertPINCodeAlike(inputLayout));
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -319,7 +402,108 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         });
     }
 
+    protected void setAssertPINCodeOK(final TextInputLayout inputLayout, final String pinCode) {
+        updateFieldCheckedStatus(inputLayout.getEditText(), false);
+        inputLayout.getEditText().addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                updateFieldCheckedStatus(inputLayout.getEditText(), assertPINCodeOK(inputLayout, pinCode));
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+    }
+
+    /* coherence-related auto-checks */
+    protected void setAssertLessThanOrEqualTo(final EditText leftField, final EditText rightField,
+                                              final DataValue leftDataValue, final DataValue rightDataValue) {
+        updateFieldCheckedStatus(leftField, true);
+        updateFieldCheckedStatus(rightField, true);
+        TextWatcher textWatcher = new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                boolean status = assertLessThanOrEqualOrNull(leftField, rightField, leftDataValue, rightDataValue);
+                updateFieldCheckedStatus(leftField, status);
+                updateFieldCheckedStatus(rightField, status);
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        };
+        leftField.addTextChangedListener(textWatcher);
+        rightField.addTextChangedListener(textWatcher);
+    }
+
+    protected void setAssertLessThanOrEqualTo(final TextInputLayout leftInput, final TextInputLayout rightInput,
+                                              final DataValue leftDataValue, final DataValue rightDataValue) {
+
+    }
+
     /* Data Coherence helpers */
+    protected boolean isLessThan(EditText fieldA, EditText fieldB) {
+    	Integer leftValue = integerFromField(fieldA, null);
+    	Integer rightValue = integerFromField(fieldB, null);
+    	if (leftValue == null && rightValue == null) {
+    		return true;
+    	} else if (leftValue == null || rightValue == null) {
+    		return false;
+    	}
+        return leftValue < rightValue;
+    }
+
+    protected boolean isLessThanOrEqual(EditText fieldA, EditText fieldB) {
+    	Integer leftValue = integerFromField(fieldA, null) ;
+    	Integer rightValue = integerFromField(fieldB, null);
+    	if (leftValue == null && rightValue == null) {
+    		return true;
+    	} else if (leftValue == null || rightValue == null) {
+    		return false;
+    	}
+        return leftValue <= rightValue;
+    }
+
+    protected boolean isEqual(EditText fieldA, EditText fieldB) {
+    	Integer leftValue = integerFromField(fieldA, null) ;
+    	Integer rightValue = integerFromField(fieldB, null);
+    	if (leftValue == null && rightValue == null) {
+    		return true;
+    	} else if (leftValue == null || rightValue == null) {
+    		return false;
+    	}
+        return leftValue == rightValue;
+    }
+
+    protected boolean isNotEqual(EditText fieldA, EditText fieldB) {
+    	Integer leftValue = integerFromField(fieldA, null) ;
+    	Integer rightValue = integerFromField(fieldB, null);
+    	if (leftValue == null && rightValue == null) {
+    		return true;
+    	} else if (leftValue == null || rightValue == null) {
+    		return false;
+    	}
+        return leftValue != rightValue;
+    }
+
+    protected boolean isGreaterThan(EditText fieldA, EditText fieldB) {
+    	Integer leftValue = integerFromField(fieldA, null);
+    	Integer rightValue = integerFromField(fieldB, null);
+    	if (leftValue == null && rightValue == null) {
+    		return true;
+    	} else if (leftValue == null || rightValue == null) {
+    		return false;
+    	}
+        return leftValue > rightValue;
+    }
+
+    protected boolean isGreaterThanOrEqual(EditText fieldA, EditText fieldB) {
+    	Integer leftValue = integerFromField(fieldA, null) ;
+    	Integer rightValue = integerFromField(fieldB, null);
+    	if (leftValue == null && rightValue == null) {
+    		return true;
+    	} else if (leftValue == null || rightValue == null) {
+    		return false;
+    	}
+        return leftValue >= rightValue;
+    }
+
     protected boolean mustBeInferior(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
     	int valueA = integerFromField(fieldA);
     	int valueB = integerFromField(fieldB);
@@ -410,10 +594,10 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return (content.length() == 0) ? null : content;
     }
 
-    protected int integerFromField(EditText editText) {
+    protected Integer integerFromField(EditText editText) {
         return integerFromField(editText, -1);
     }
-    protected int integerFromField(EditText editText, int fallback) {
+    protected Integer integerFromField(EditText editText, Integer fallback) {
         String text = stringFromField(editText);
         if (text.length() > 0) {
             try {
