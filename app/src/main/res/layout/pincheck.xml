@@ -17,12 +17,13 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_pin">
+            android:id="@+id/til_pin">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/verify_pin"/>
             <EditText
+                android:id="@+id/et_pin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberPassword"

@@ -58,6 +58,10 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
     /* Keep an internal state of input validation for each fields */
 	protected LinkedHashMap<Integer, Boolean> checkedFields = new LinkedHashMap<>();
 
+    protected void resetFieldCheckedStatus() {
+        checkedFields.clear();
+    }
+
 	protected void updateFieldCheckedStatus(EditText editText) {
 		updateFieldCheckedStatus(editText, false);
 	}

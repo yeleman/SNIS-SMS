@@ -475,11 +475,11 @@ public class DataValidation extends SugarRecord {
                 TextView rightLetter = (TextView) rightLineLayout.findViewById(R.id.tv_letter);
                 rightLetter.setText("B");
                 final TextView rightLabel = (TextView) rightLineLayout.findViewById(R.id.tv_label);
-                final String rightDataElementLabel = dataValidation.getLeftLabel();
+                final String rightDataElementLabel = dataValidation.getRightLabel();
                 final String rightSectionLabel = Section.getFor(
                         dataValidation.getRightDataValue().getDataElementId(),
                         dataValidation.getRightDataValue().getCategoryId()).getLabel();
-                rightLabel.setText(leftDataElementLabel);
+                rightLabel.setText(rightDataElementLabel);
                 if (dataValidation.getSection() == null || dataValidation.getSection().hasMultipleCategories()) {
                     if (dataValidation.getRightDataValue().hasCategory()) {
                         View rightCategoryDivider = rightLineLayout.findViewById(R.id.dv_category);

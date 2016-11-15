@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.provider.Settings;
 import android.support.design.widget.TextInputLayout;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,9 +39,10 @@ public class PINCheckActivity extends CheckedFormActivity {
 
     protected void setupUIForCheck() {
         setContentView(R.layout.pincheck);
+        resetFieldCheckedStatus();
 
         final Activity activity = this;
-        pinField = (TextInputLayout) findViewById(R.id.et_pin);
+        pinField = (TextInputLayout) findViewById(R.id.til_pin);
         setAssertPINCodeOK(pinField, sharedPrefs.getString(Constants.KEY_PIN_CODE, null));
         pinField.requestFocus();
 
@@ -80,9 +82,10 @@ public class PINCheckActivity extends CheckedFormActivity {
 
     protected void setupUIForCreate() {
         setContentView(R.layout.pincheck_create);
+        resetFieldCheckedStatus();
 
         final Activity activity = this;
-        pinField = (TextInputLayout) findViewById(R.id.et_pin);
+        pinField = (TextInputLayout) findViewById(R.id.til_pin);
         setAssertPINAlike(pinField);
         pinField.requestFocus();
 
@@ -98,9 +101,7 @@ public class PINCheckActivity extends CheckedFormActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!checkInputsAndCoherence()) {
-                    return;
-                }
+                if (!checkInputsAndCoherence()) { return; }
 
                 final SharedPreferences.Editor prefsEditor = sharedPrefs.edit();
                 prefsEditor.putString(Constants.KEY_PIN_CODE, pinField.getEditText().getText().toString());

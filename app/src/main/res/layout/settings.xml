@@ -12,13 +12,14 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_server_number">
+            android:id="@+id/til_server_number">
 
             <TextView
                 android:text="@string/settings_server_num_summary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <EditText
+                android:id="@+id/et_server_number"
                 style="@style/editText"
                 android:hint="@string/settings_server_num"
                 android:inputType="number"
@@ -28,13 +29,14 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_username">
+            android:id="@+id/til_username">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_username_summary" />
 
             <EditText
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/settings_username_hint"
@@ -44,12 +46,13 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_password">
+            android:id="@+id/til_password">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_password_summary"/>
             <EditText
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -60,12 +63,13 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_pin">
+            android:id="@+id/til_pin">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_pin"/>
             <EditText
+                android:id="@+id/et_pin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberPassword"

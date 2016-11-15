@@ -43,17 +43,16 @@ public class SettingsActivity extends CheckedFormActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setupSMSReceiver();
         setContentView(R.layout.settings);
         setupOrRefreshUI();
     }
 
     protected void setupUI() {
 
-        serverPhoneNumberField = (TextInputLayout) findViewById(R.id.et_server_number);
-        usernameField = (TextInputLayout) findViewById(R.id.et_username);
-        pinField = (TextInputLayout) findViewById(R.id.et_pin);
-        passwordField = (TextInputLayout) findViewById(R.id.et_password);
+        serverPhoneNumberField = (TextInputLayout) findViewById(R.id.til_server_number);
+        usernameField = (TextInputLayout) findViewById(R.id.til_username);
+        pinField = (TextInputLayout) findViewById(R.id.til_pin);
+        passwordField = (TextInputLayout) findViewById(R.id.til_password);
         checkButton = (Button) findViewById(R.id.btn_check);
 
         loadPreferenceValues();
