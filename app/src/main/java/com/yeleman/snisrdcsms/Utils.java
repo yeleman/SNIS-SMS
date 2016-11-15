@@ -6,6 +6,8 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.orm.SugarRecord;
+
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 
@@ -315,4 +317,7 @@ public class Utils {
         return msisdn.replace(Constants.PHONE_PREFIX, "").replace("+", "");
     }
 
+    public static void truncateTable(String tableName) {
+        SugarRecord.executeQuery("DELETE FROM SQLITE_SEQUENCE WHERE NAME = ?;", tableName);
+    }
 }

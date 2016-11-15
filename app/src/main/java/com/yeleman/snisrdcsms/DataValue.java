@@ -19,6 +19,11 @@ public class DataValue extends SugarRecord {
     public DataValue(){
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(DataValue.class);
+        Utils.truncateTable("DATA_VALUE");
+    }
+
     public DataValue(@NonNull Long dataElement, Long category, String value) {
         setDataElementId(dataElement);
         setCategoryId(category);

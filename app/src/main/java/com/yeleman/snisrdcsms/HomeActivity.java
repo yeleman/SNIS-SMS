@@ -68,6 +68,10 @@ public class HomeActivity extends CheckedFormActivity {
         updateResetLayoutVisibility();
     }
 
+    protected void refreshUI() {
+        updateResetLayoutVisibility();
+    }
+
     protected void toggleReportButton(boolean enable) {
         // toggle reporting button
         startButton.setText(enable ? name : getString(R.string.in_progress));

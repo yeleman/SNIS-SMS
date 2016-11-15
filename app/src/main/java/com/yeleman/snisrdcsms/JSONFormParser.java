@@ -135,14 +135,14 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
     public void removePreviousData() {
         Log.d(TAG, "removePreviousData");
         // empty all models
-        SugarRecord.deleteAll(DataValidation.class);
-        SugarRecord.deleteAll(Category.class);
-        SugarRecord.deleteAll(CategorySection.class);
-        SugarRecord.deleteAll(DataElement.class);
-        SugarRecord.deleteAll(DataElementSection.class);
-        SugarRecord.deleteAll(DataValue.class);
-        SugarRecord.deleteAll(OrganisationUnit.class);
-        SugarRecord.deleteAll(Section.class);
+        DataValidation.truncate();
+        Category.truncate();
+        CategorySection.truncate();
+        DataElement.truncate();
+        DataElementSection.truncate();
+        DataValue.truncate();
+        OrganisationUnit.truncate();
+        Section.truncate();
     }
 
     public void readAndProcessForm(JSONObject jsonObject) throws JSONException {

@@ -12,6 +12,11 @@ public class OrganisationUnit extends SugarRecord {
     public OrganisationUnit(){
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(OrganisationUnit.class);
+        Utils.truncateTable("ORGANISATION_UNIT");
+    }
+
     public OrganisationUnit(@NonNull String dhisId, @NonNull String label) {
         setDhisId(dhisId);
         setLabel(label);

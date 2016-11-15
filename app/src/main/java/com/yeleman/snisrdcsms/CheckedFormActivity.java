@@ -643,13 +643,13 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
         final String prefPINCode = sharedPrefs.getString(Constants.KEY_PIN_CODE, "");
         AlertDialog.Builder identDialogBuilder = Popups.getDialogBuilder(
                 activity, getString(R.string.password_dialog_title),
-                String.format(getString(R.string.password_dialog_text), reportName),
+                null,
                 false);
         LayoutInflater inflater = activity.getLayoutInflater();
-        final View view = inflater.inflate(R.layout.password_dialog, null);
-        final EditText usernameField = (EditText) view.findViewById(R.id.usernameField);
+        final View view = inflater.inflate(R.layout.transmission_dialog, null);
+        final TextInputLayout usernameField = (TextInputLayout) view.findViewById(R.id.til_username);
         usernameField.setEnabled(false);
-        usernameField.setText(prefUsername);
+        usernameField.getEditText().setText(prefUsername);
 
         final ArrayList<OrganisationUnit> organisationUnits = getUserOrganisationUnits();
         if (organisationUnits.isEmpty()) {
@@ -700,7 +700,7 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
         identDialog.show();
         identDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                EditText pinField = (EditText) view.findViewById(R.id.pinField);
+                TextInputLayout pinField = (TextInputLayout) view.findViewById(R.id.til_pin);
                 pinField.setError(null);
 
                 String selectedOrganisation;

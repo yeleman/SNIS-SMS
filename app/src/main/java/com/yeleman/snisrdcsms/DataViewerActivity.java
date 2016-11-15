@@ -32,7 +32,7 @@ public class DataViewerActivity extends CheckedFormActivity {
         setTitle(getString(R.string.title_activity_data_viewer));
 
         if (section == null) {
-            section = Section.findById(Section.class, 1);
+            section = Section.first(Section.class);
         }
         setupOrRefreshUI();
     }

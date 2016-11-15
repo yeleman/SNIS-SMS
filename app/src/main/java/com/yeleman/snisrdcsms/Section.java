@@ -34,6 +34,11 @@ public class Section extends SugarRecord {
     public Section(){
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(Section.class);
+        Utils.truncateTable("SECTION");
+    }
+
     public Section(@NonNull String slug, @NonNull String label, @NonNull String categoryType, @NonNull Integer order) {
         setSlug(slug);
         setLabel(label);

@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/create_a_pin"/>
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/et_pin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

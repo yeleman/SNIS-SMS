@@ -14,6 +14,11 @@ public class Category extends SugarRecord {
     public Category(){
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(Category.class);
+        Utils.truncateTable("CATEGORY");
+    }
+
     public Category(@NonNull String dhisId, @NonNull String label, @NonNull Integer order) {
         setDhisId(dhisId);
         setLabel(label);

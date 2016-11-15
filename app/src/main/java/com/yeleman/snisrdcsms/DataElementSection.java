@@ -18,6 +18,11 @@ public class DataElementSection extends SugarRecord {
     public DataElementSection(){
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(DataElementSection.class);
+        Utils.truncateTable("DATA_ELEMENT_SECTION");
+    }
+
     public DataElementSection(@NonNull Long dataElementId, @NonNull Long sectionId) {
         setDataElementId(dataElementId);
         setSectionId(sectionId);

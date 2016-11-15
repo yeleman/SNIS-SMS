@@ -18,6 +18,11 @@ public class CategorySection extends SugarRecord {
     public CategorySection(){
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(CategorySection.class);
+        Utils.truncateTable("CATEGORY_SECTION");
+    }
+
     public CategorySection(@NonNull Long categoryId, @NonNull Long sectionId) {
         setCategoryId(categoryId);
         setSectionId(sectionId);

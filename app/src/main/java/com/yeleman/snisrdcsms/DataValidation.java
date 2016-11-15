@@ -83,6 +83,11 @@ public class DataValidation extends SugarRecord {
     public DataValidation() {
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(DataValidation.class);
+        Utils.truncateTable("DATA_VALIDATION");
+    }
+
     public void setSectionId(Long sectionId) {
         this.sectionId = sectionId;
     }
@@ -390,6 +395,8 @@ public class DataValidation extends SugarRecord {
         final View baseLayout = inflater.inflate(R.layout.data_validation_dialog, null);
         final LinearLayout mainLayout = (LinearLayout) baseLayout.findViewById(R.id.ll_layout);
 
+        View lastSeparator = null;
+
         for (String operator: validationsMap.keySet()) {
             // operator line
             final View operatorLayout = inflater.inflate(R.layout.data_validation_dialog_operator, null);
@@ -529,7 +536,16 @@ public class DataValidation extends SugarRecord {
                 mainLayout.addView(fieldsSeparatorLine);
                 mainLayout.addView(rightLineLayout);
                 mainLayout.addView(validationSeparatorLine);
+
+                lastSeparator = validationSeparatorLine;
             }
+        }
+
+        // make bottom line thiner than regular separator
+        if (lastSeparator != null) {
+            mainLayout.removeView(lastSeparator);
+            View lastSeparatorLine = inflater.inflate(R.layout.horizontal_line, null);
+            mainLayout.addView(lastSeparatorLine);
         }
 
         errorDialogBuilder.setView(baseLayout);

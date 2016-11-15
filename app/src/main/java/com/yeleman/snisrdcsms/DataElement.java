@@ -14,6 +14,11 @@ public class DataElement extends SugarRecord {
     public DataElement(){
     }
 
+    public static void truncate() {
+        SugarRecord.deleteAll(DataElement.class);
+        Utils.truncateTable("DATA_ELEMENT");
+    }
+
     public DataElement(@NonNull String dhisId, @NonNull String label, @NonNull Integer order) {
         setDhisId(dhisId);
         setLabel(label);
