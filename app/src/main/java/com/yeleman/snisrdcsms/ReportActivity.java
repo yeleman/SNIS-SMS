@@ -64,6 +64,7 @@ public class ReportActivity extends CheckedFormActivity {
     }
 
     protected void setupUI() {
+        final CheckedFormActivity activity = this;
         ViewGroup parentView = (ViewGroup) findViewById(R.id.ll_layout);
         for (final Section section: Section.getAllSection()) {
             LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -94,9 +95,11 @@ public class ReportActivity extends CheckedFormActivity {
             @Override
             public void onClick(View view) {
                 view.setEnabled(false);
-                // requestPasswordAndTransmitSMS(reportActivity, reportName);
-                requestPasswordAndTransmitSMSWithPermission();
-                //view.setEnabled(true);
+                if (DataValidation.displayCoherenceErrorsPopup(activity, null)) {
+                    requestPasswordAndTransmitSMSWithPermission();
+                } else {
+                    view.setEnabled(true);
+                }
             }
         });
     }
@@ -147,8 +150,6 @@ public class ReportActivity extends CheckedFormActivity {
     }
 
     public void startViewerActivity(View view) {
-        if (DataValidation.displayErrorPopup(this, null)) {
-            startActivity(new Intent(this, DataViewerActivity.class));
-        }
+        startActivity(new Intent(this, DataViewerActivity.class));
     }
 }

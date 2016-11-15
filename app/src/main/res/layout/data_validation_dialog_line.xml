@@ -21,6 +21,17 @@ android:layout_weight="8">
     android:layout_weight="5"
     android:padding="5dp" />
 
+    <ImageView
+        android:visibility="gone"
+        android:alpha="0.8"
+        android:id="@+id/iv_info"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_vertical"
+        android:tint="#4974b4"
+        android:src="@android:drawable/ic_dialog_info"
+        android:paddingRight="2dp" />
+
 <View style="@style/Divider" android:id="@+id/dv_category" android:visibility="gone"/>
 
 <TextView

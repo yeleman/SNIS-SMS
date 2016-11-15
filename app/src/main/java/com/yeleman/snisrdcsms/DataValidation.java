@@ -2,12 +2,16 @@ package com.yeleman.snisrdcsms;
 
 
 import android.app.AlertDialog;
+import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -47,6 +51,10 @@ public class DataValidation extends SugarRecord {
 
     @Ignore
     public static final HashMap<String, String> OPERATORS_SYMBOLS = new HashMap<>();
+    private static final int INFO_ICON_COLOR = Color.rgb(73, 116, 180);
+    private static final int INFO_ICON_DELAY = 4;
+    private static final int DISABLED_INFO_ICON_COLOR = Color.GRAY;
+
     static {
         OPERATORS_SYMBOLS.put(EQUAL_TO, "=");
         OPERATORS_SYMBOLS.put(NOT_EQUAL_TO, "!=");
@@ -367,8 +375,9 @@ public class DataValidation extends SugarRecord {
         return StringUtils.join(getHintsFor(getAllFor(dataValue.getId()), dataValue, withCategory));
     }
 
-    public static boolean displayErrorPopup(CheckedFormActivity activity, Long sectionId) {
-        HashMap<String, List<DataValidation>> validationsMap = (sectionId == null) ? DataValidation.getGroupedCrossSectionsFailing() : DataValidation.getGroupedFailingForSection(activity, sectionId);
+    public static boolean displayCoherenceErrorsPopup(CheckedFormActivity activity, Long sectionId) {
+        boolean isCrossSection = sectionId == null;
+        HashMap<String, List<DataValidation>> validationsMap = (isCrossSection) ? DataValidation.getGroupedCrossSectionsFailing() : DataValidation.getGroupedFailingForSection(activity, sectionId);
         if (validationsMap.values().isEmpty()) {
             return true;
         }
@@ -410,8 +419,12 @@ public class DataValidation extends SugarRecord {
                 // left
                 TextView leftLetter = (TextView) leftLineLayout.findViewById(R.id.tv_letter);
                 leftLetter.setText("A");
-                TextView leftLabel = (TextView) leftLineLayout.findViewById(R.id.tv_label);
-                leftLabel.setText(dataValidation.getLeftLabel());
+                final TextView leftLabel = (TextView) leftLineLayout.findViewById(R.id.tv_label);
+                final String leftDataElementLabel = dataValidation.getLeftLabel();
+                final String leftSectionLabel = Section.getFor(
+                        dataValidation.getLeftDataValue().getDataElementId(),
+                        dataValidation.getLeftDataValue().getCategoryId()).getLabel();
+                leftLabel.setText(leftDataElementLabel);
                 if (dataValidation.getSection() == null || dataValidation.getSection().hasMultipleCategories()) {
                     if (dataValidation.getLeftDataValue().hasCategory()) {
                         View leftCategoryDivider = leftLineLayout.findViewById(R.id.dv_category);
@@ -419,6 +432,37 @@ public class DataValidation extends SugarRecord {
                         TextView leftCategory = (TextView) leftLineLayout.findViewById(R.id.tv_category);
                         leftCategory.setVisibility(View.VISIBLE);
                         leftCategory.setText(dataValidation.getLeftDataValue().getActualCategory().getLabel());
+
+                        // display info icon with switch to show section name
+                        if (isCrossSection) {
+                            final ImageView leftInfoIcon = (ImageView) leftLineLayout.findViewById(R.id.iv_info);
+                            leftInfoIcon.setVisibility(View.VISIBLE);
+
+                            final Handler handler = new Handler() {
+                                @Override
+                                public void handleMessage(final Message msg) {
+                                    super.handleMessage(msg);
+                                    leftLabel.setText(leftDataElementLabel);
+                                    leftInfoIcon.setEnabled(true);
+                                    leftInfoIcon.setColorFilter(DataValidation.INFO_ICON_COLOR);
+
+                                }
+                            };
+                            class MyRunnable implements Runnable {
+                                @Override
+                                public void run() { handler.sendEmptyMessage(0); }
+                            }
+
+                            leftInfoIcon.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    leftInfoIcon.setEnabled(false);
+                                    leftInfoIcon.setColorFilter(DataValidation.DISABLED_INFO_ICON_COLOR);
+                                    leftLabel.setText(leftSectionLabel);
+                                    handler.postDelayed(new MyRunnable(), DataValidation.INFO_ICON_DELAY * 1000);
+                                }
+                            });
+                        }
                     }
                 }
                 TextView leftValueView = (TextView) leftLineLayout.findViewById(R.id.tv_value);
@@ -430,8 +474,12 @@ public class DataValidation extends SugarRecord {
                 // right
                 TextView rightLetter = (TextView) rightLineLayout.findViewById(R.id.tv_letter);
                 rightLetter.setText("B");
-                TextView rightLabel = (TextView) rightLineLayout.findViewById(R.id.tv_label);
-                rightLabel.setText(dataValidation.getRightLabel());
+                final TextView rightLabel = (TextView) rightLineLayout.findViewById(R.id.tv_label);
+                final String rightDataElementLabel = dataValidation.getLeftLabel();
+                final String rightSectionLabel = Section.getFor(
+                        dataValidation.getRightDataValue().getDataElementId(),
+                        dataValidation.getRightDataValue().getCategoryId()).getLabel();
+                rightLabel.setText(leftDataElementLabel);
                 if (dataValidation.getSection() == null || dataValidation.getSection().hasMultipleCategories()) {
                     if (dataValidation.getRightDataValue().hasCategory()) {
                         View rightCategoryDivider = rightLineLayout.findViewById(R.id.dv_category);
@@ -439,6 +487,36 @@ public class DataValidation extends SugarRecord {
                         TextView rightCategory = (TextView) rightLineLayout.findViewById(R.id.tv_category);
                         rightCategory.setVisibility(View.VISIBLE);
                         rightCategory.setText(dataValidation.getRightDataValue().getActualCategory().getLabel());
+
+                        // display info icon with switch to show section name
+                        if (isCrossSection) {
+                            final ImageView rightInfoIcon = (ImageView) rightLineLayout.findViewById(R.id.iv_info);
+                            rightInfoIcon.setVisibility(View.VISIBLE);
+
+                            final Handler handler = new Handler() {
+                                @Override
+                                public void handleMessage(final Message msg) {
+                                    super.handleMessage(msg);
+                                    rightLabel.setText(rightDataElementLabel);
+                                    rightInfoIcon.setEnabled(true);
+                                    rightInfoIcon.setColorFilter(DataValidation.INFO_ICON_COLOR);
+                                }
+                            };
+                            class MyRunnable implements Runnable {
+                                @Override
+                                public void run() { handler.sendEmptyMessage(0); }
+                            }
+
+                            rightInfoIcon.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    rightInfoIcon.setEnabled(false);
+                                    rightInfoIcon.setColorFilter(DataValidation.DISABLED_INFO_ICON_COLOR);
+                                    rightLabel.setText(rightSectionLabel);
+                                    handler.postDelayed(new MyRunnable(), DataValidation.INFO_ICON_DELAY * 1000);
+                                }
+                            });
+                        }
                     }
                 }
                 TextView rightValueView = (TextView) rightLineLayout.findViewById(R.id.tv_value);

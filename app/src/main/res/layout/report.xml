@@ -40,21 +40,20 @@
             android:onClick="startViewerActivity"
             android:id="@+id/btn_view"
             android:text="@string/view_data_button"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="0dp"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:textSize="14sp"
             android:layout_margin="10dp"
-            android:background="#efefef" />
+            android:background="#dedede"
+            />
 
         <Button
-            style="@style/sendButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
             android:id="@+id/btn_submit"
             android:text="@string/submit_button"
-            android:textAllCaps="false"
-            android:layout_margin="5dp" />
+            android:textAllCaps="true"
+            android:layout_margin="10dp" />
 
     </LinearLayout>
 </ScrollView>

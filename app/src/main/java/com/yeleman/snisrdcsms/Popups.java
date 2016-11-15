@@ -81,7 +81,9 @@ public class Popups {
             // divider
             int dividerId = dialog.getContext().getResources().getIdentifier("android:id/titleDivider", null, null);
             View divider = dialog.findViewById(dividerId);
-            divider.setBackgroundColor(textColor);
+            if (divider != null) {
+                divider.setBackgroundColor(textColor);
+            }
         }
     }
 

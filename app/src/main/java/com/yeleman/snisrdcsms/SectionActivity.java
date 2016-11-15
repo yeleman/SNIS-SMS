@@ -1,7 +1,6 @@
 package com.yeleman.snisrdcsms;
 
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
@@ -142,7 +141,7 @@ public class SectionActivity extends CheckedFormActivity {
     }
 
     protected boolean ensureDataCoherence() {
-        return DataValidation.displayErrorPopup(this, section.getId());
+        return DataValidation.displayCoherenceErrorsPopup(this, section.getId());
     }
 
 }
