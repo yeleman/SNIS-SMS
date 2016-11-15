@@ -413,11 +413,13 @@ public class DataValidation extends SugarRecord {
                 TextView leftLabel = (TextView) leftLineLayout.findViewById(R.id.tv_label);
                 leftLabel.setText(dataValidation.getLeftLabel());
                 if (dataValidation.getSection() == null || dataValidation.getSection().hasMultipleCategories()) {
-                    View leftCategoryDivider = leftLineLayout.findViewById(R.id.dv_category);
-                    leftCategoryDivider.setVisibility(View.VISIBLE);
-                    TextView leftCategory = (TextView) leftLineLayout.findViewById(R.id.tv_category);
-                    leftCategory.setVisibility(View.VISIBLE);
-                    leftCategory.setText(dataValidation.getLeftDataValue().getActualCategory().getLabel());
+                    if (dataValidation.getLeftDataValue().hasCategory()) {
+                        View leftCategoryDivider = leftLineLayout.findViewById(R.id.dv_category);
+                        leftCategoryDivider.setVisibility(View.VISIBLE);
+                        TextView leftCategory = (TextView) leftLineLayout.findViewById(R.id.tv_category);
+                        leftCategory.setVisibility(View.VISIBLE);
+                        leftCategory.setText(dataValidation.getLeftDataValue().getActualCategory().getLabel());
+                    }
                 }
                 TextView leftValueView = (TextView) leftLineLayout.findViewById(R.id.tv_value);
                 leftValueView.setText(Utils.numberFormat(leftValue));
@@ -430,12 +432,14 @@ public class DataValidation extends SugarRecord {
                 rightLetter.setText("B");
                 TextView rightLabel = (TextView) rightLineLayout.findViewById(R.id.tv_label);
                 rightLabel.setText(dataValidation.getRightLabel());
-                if ((dataValidation.getSection() == null || dataValidation.getSection().hasMultipleCategories()) {
-                    View rightCategoryDivider = rightLineLayout.findViewById(R.id.dv_category);
-                    rightCategoryDivider.setVisibility(View.VISIBLE);
-                    TextView rightCategory = (TextView) rightLineLayout.findViewById(R.id.tv_category);
-                    rightCategory.setVisibility(View.VISIBLE);
-                    rightCategory.setText(dataValidation.getRightDataValue().getActualCategory().getLabel());
+                if (dataValidation.getSection() == null || dataValidation.getSection().hasMultipleCategories()) {
+                    if (dataValidation.getRightDataValue().hasCategory()) {
+                        View rightCategoryDivider = rightLineLayout.findViewById(R.id.dv_category);
+                        rightCategoryDivider.setVisibility(View.VISIBLE);
+                        TextView rightCategory = (TextView) rightLineLayout.findViewById(R.id.tv_category);
+                        rightCategory.setVisibility(View.VISIBLE);
+                        rightCategory.setText(dataValidation.getRightDataValue().getActualCategory().getLabel());
+                    }
                 }
                 TextView rightValueView = (TextView) rightLineLayout.findViewById(R.id.tv_value);
                 rightValueView.setText(Utils.numberFormat(rightValue));
