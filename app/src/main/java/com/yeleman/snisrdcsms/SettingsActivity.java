@@ -56,8 +56,8 @@ public class SettingsActivity extends CheckedFormActivity {
 
         // mark field requirements
         setAssertNotEmpty(serverPhoneNumberField);
-        setAssertNotEmpty(usernameField);
-        setAssertNotEmpty(passwordField);
+        setAssertDHISUsernameAlike(usernameField);
+        setAssertDHISPasswordAlike(passwordField);
         setAssertPINAlike(pinField);
 
         serverPhoneNumberField.getEditText().setText(prefServerNumber);

@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater {
 
@@ -124,6 +126,30 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
     }
 
 	/* Input Validation Checks (standalone functions) */
+    protected boolean assertDHISUsernameAlike(TextInputLayout inputLayout) {
+        int min = 2;
+        int max = 140;
+        int length = inputLayout.getEditText().getText().toString().trim().length();
+        boolean test = (length < min || length > max);
+        String error_msg = String.format(getString(R.string.error_field_username_alike_chars), min, max);
+        return doCheckAndProceed(test, error_msg, inputLayout);
+    }
+
+    protected boolean assertDHISPasswordAlike(TextInputLayout inputLayout) {
+        int min = 8;
+        int max = 35;
+        String text = inputLayout.getEditText().getText().toString().trim();
+        int length = text.length();
+        Pattern capLetter = Pattern.compile(".*[A-Z]+.*");
+        Pattern number = Pattern.compile(".*[0-9]+.*");
+        boolean hasCapLetter = capLetter.matcher(text).matches();
+        boolean hasNumber = number.matcher(text).matches();
+        boolean test = (length < min || length > max || !hasCapLetter || !hasNumber);
+
+        String error_msg = String.format(getString(R.string.error_field_password_alike), min, max);
+        return doCheckAndProceed(test, error_msg, inputLayout);
+    }
+
     protected boolean assertNotEmpty(TextInputLayout inputLayout) {
         boolean test = (inputLayout.getEditText().getText().toString().trim().length() == 0);
         String error_msg = getString(R.string.error_field_empty);
@@ -194,6 +220,30 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
         inputLayout.getEditText().addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 updateFieldCheckedStatus(inputLayout.getEditText(), assertPINCodeAlike(inputLayout));
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+    }
+
+    protected void setAssertDHISUsernameAlike(final TextInputLayout inputLayout) {
+        updateFieldCheckedStatus(inputLayout.getEditText(), false);
+        inputLayout.getEditText().addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                updateFieldCheckedStatus(inputLayout.getEditText(), assertDHISUsernameAlike(inputLayout));
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+    }
+
+    protected void setAssertDHISPasswordAlike(final TextInputLayout inputLayout) {
+        updateFieldCheckedStatus(inputLayout.getEditText(), false);
+        inputLayout.getEditText().addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                updateFieldCheckedStatus(inputLayout.getEditText(), assertDHISPasswordAlike(inputLayout));
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
