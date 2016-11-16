@@ -9,7 +9,7 @@ public class OrganisationUnit extends SugarRecord {
     private String dhisId;
     private String label;
 
-    public OrganisationUnit(){
+    private OrganisationUnit(){
     }
 
     public static void truncate() {
@@ -17,7 +17,7 @@ public class OrganisationUnit extends SugarRecord {
         Utils.truncateTable("ORGANISATION_UNIT");
     }
 
-    public OrganisationUnit(@NonNull String dhisId, @NonNull String label) {
+    private OrganisationUnit(@NonNull String dhisId, @NonNull String label) {
         setDhisId(dhisId);
         setLabel(label);
     }
@@ -47,7 +47,7 @@ public class OrganisationUnit extends SugarRecord {
         return OrganisationUnit.find(OrganisationUnit.class, "DHIS_ID = ?", dhisId).get(0);
     }
 
-    void setDhisId(String dhisId) {
+    private void setDhisId(String dhisId) {
         this.dhisId = dhisId;
     }
 
@@ -55,7 +55,7 @@ public class OrganisationUnit extends SugarRecord {
         return dhisId;
     }
 
-    void setLabel(String label) {
+    private void setLabel(String label) {
         this.label = label;
     }
 

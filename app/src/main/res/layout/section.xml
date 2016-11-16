@@ -7,14 +7,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rl_header"
         android:visibility="gone"
         android:padding="4dp"
         android:background="@drawable/border_bottom">
     </RelativeLayout>
 
     <ScrollView
-        android:id="@+id/sv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout

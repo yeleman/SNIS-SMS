@@ -4,13 +4,10 @@ package com.yeleman.snisrdcsms;
 import android.support.annotation.NonNull;
 
 import com.orm.SugarRecord;
-import com.orm.query.Condition;
-import com.orm.query.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class CategorySection extends SugarRecord {
+class CategorySection extends SugarRecord {
 
     private Long categoryId;
     private Long sectionId;
@@ -41,7 +38,7 @@ public class CategorySection extends SugarRecord {
                 String.valueOf(sectionId));
     }
 
-    public void setCategoryId(Long categoryId) {
+    private void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -49,7 +46,7 @@ public class CategorySection extends SugarRecord {
         return categoryId;
     }
 
-    public void setSectionId(Long sectionId) {
+    private void setSectionId(Long sectionId) {
         this.sectionId = sectionId;
     }
 

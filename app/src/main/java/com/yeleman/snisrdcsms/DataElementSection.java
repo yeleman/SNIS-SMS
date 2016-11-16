@@ -4,10 +4,7 @@ package com.yeleman.snisrdcsms;
 import android.support.annotation.NonNull;
 
 import com.orm.SugarRecord;
-import com.orm.query.Condition;
-import com.orm.query.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DataElementSection extends SugarRecord {

@@ -35,12 +35,13 @@
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:text="99 999"
-        android:gravity="right"
+        android:gravity="end"
         android:maxLines="1"
         android:maxWidth="60dp"
         android:minWidth="60dp"
         android:layout_weight=".15"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
-        android:paddingRight="5dp" />
+        android:paddingRight="5dp"
+        android:paddingEnd="5dp"/>
 </TableRow>

@@ -68,7 +68,7 @@
             android:configChanges="keyboardHidden"
             android:screenOrientation="portrait"
             android:name=".DataViewerActivity"
-            android:label="@string/title_activity_data_viewer"></activity>
+            android:label="@string/title_activity_data_viewer" />
     </application>
 
 </manifest>

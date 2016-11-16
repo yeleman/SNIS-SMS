@@ -5,10 +5,8 @@ import android.support.annotation.NonNull;
 
 import com.orm.SugarRecord;
 import com.orm.dsl.Ignore;
-import com.orm.query.Condition;
 import com.orm.query.Select;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -24,7 +22,7 @@ public class Section extends SugarRecord {
     @Ignore
     public static final String MULTIPLE_CATEGORIES = "multiple_categories";
     @Ignore
-    public static final Set<String> CATEGORY_TYPE = new HashSet<>(Arrays.asList(new String[] { NO_CATEGORY, SINGLE_CATEGORY, MULTIPLE_CATEGORIES }));
+    private static final Set<String> CATEGORY_TYPE = new HashSet<>(Arrays.asList(new String[] { NO_CATEGORY, SINGLE_CATEGORY, MULTIPLE_CATEGORIES }));
 
     private String slug;
     private String label;
@@ -59,7 +57,7 @@ public class Section extends SugarRecord {
         return String.valueOf(getId());
     }
 
-    void setSlug(String slug) {
+    private void setSlug(String slug) {
         this.slug = slug;
     }
 
@@ -67,7 +65,7 @@ public class Section extends SugarRecord {
         return slug;
     }
 
-    void setLabel(String label) {
+    private void setLabel(String label) {
         this.label = label;
     }
 
@@ -82,7 +80,7 @@ public class Section extends SugarRecord {
         return getLabel();
     }
 
-    public Category getActualCategory() {
+    private Category getActualCategory() {
         if (hasSingleCategory()) {
             return Category.findWithQuery(
                     Category.class,
@@ -93,7 +91,7 @@ public class Section extends SugarRecord {
         return null;
     }
 
-    void setCategoryType(String categoryType) {
+    private void setCategoryType(String categoryType) {
         if (!CATEGORY_TYPE.contains(categoryType)) {
             throw new IllegalArgumentException("Invalid category type");
         }
@@ -104,7 +102,7 @@ public class Section extends SugarRecord {
         return categoryType;
     }
 
-    void setOrder(Integer order) {
+    private void setOrder(Integer order) {
         this.m_order = order;
     }
 
@@ -114,9 +112,9 @@ public class Section extends SugarRecord {
 
     public Boolean hasMultipleCategories() { return getCategoryType().equals(MULTIPLE_CATEGORIES); }
     public Boolean hasSingleCategory() { return getCategoryType().equals(SINGLE_CATEGORY); }
-    public Boolean hasNoCategory() { return getCategoryType().equals(NO_CATEGORY); }
+    private Boolean hasNoCategory() { return getCategoryType().equals(NO_CATEGORY); }
 
-    public Long getFilledDataValuesNumber() {
+    private Long getFilledDataValuesNumber() {
         if (hasNoCategory()) {
             return (long) DataValue.findWithQuery(
                     DataValue.class,
@@ -156,7 +154,7 @@ public class Section extends SugarRecord {
         }
     }
 
-    public Long getExpectedValuesNumber() {
+    private Long getExpectedValuesNumber() {
         return (long) getExpectedDataValues().size();
     }
     public String getLabelWithProgression() {

@@ -19,23 +19,23 @@ interface JSONFormParserVersion {
 }
 
 class JSONFormParserMixin {
-    public static final String KEY_DB_INITIALIZED = "db_initialized";
-    public static final String KEY_SMS_FORMAT = "smsFormat";
-    public static final String KEY_KEYWORD = "keyword";
-    public static final String KEY_NAME = "name";
-    public static final String KEY_VERSION = "version";
-    public static final String KEY_CATEGORY = "category";
-    public static final String KEY_CATEGORIES = "categories";
-    public static final String KEY_ID = "id";
-    public static final String KEY_LABEL = "label";
-    public static final String KEY_DATA_ELEMENTS = "dataElements";
-    public static final String KEY_ORGANISATION_UNITS = "organisationUnits";
-    public static final String KEY_CHECKS = "checks";
-    public static final String KEY_OPERATOR = "operator";
-    public static final String KEY_LEFT = "left";
-    public static final String KEY_RIGHT = "right";
+    static final String KEY_DB_INITIALIZED = "db_initialized";
+    static final String KEY_SMS_FORMAT = "smsFormat";
+    static final String KEY_KEYWORD = "keyword";
+    static final String KEY_NAME = "name";
+    static final String KEY_VERSION = "version";
+    static final String KEY_CATEGORY = "category";
+    static final String KEY_CATEGORIES = "categories";
+    static final String KEY_ID = "id";
+    static final String KEY_LABEL = "label";
+    static final String KEY_DATA_ELEMENTS = "dataElements";
+    static final String KEY_ORGANISATION_UNITS = "organisationUnits";
+    static final String KEY_CHECKS = "checks";
+    static final String KEY_OPERATOR = "operator";
+    static final String KEY_LEFT = "left";
+    static final String KEY_RIGHT = "right";
 
-    public static final String SMS_SPACER = " ";
+    static final String SMS_SPACER = " ";
 
     public static String getString(JSONObject obj, String key) {
         try {
@@ -62,14 +62,14 @@ class JSONFormParserMixin {
     }
 }
 
-public class JSONFormParser extends JSONFormParserMixin {
+class JSONFormParser extends JSONFormParserMixin {
 
     public static final String TAG = Constants.getLogTag("JSONFormParser");
-    public static final HashMap<Integer,JSONFormParserVersion> VERSIONS = new HashMap<>();
+    private static final HashMap<Integer,JSONFormParserVersion> VERSIONS = new HashMap<>();
     static{ VERSIONS.put(2, new JSONFormVersion2()); }
 
 
-    public static void removePreviousData(int upToVersion) {
+    private static void removePreviousData(int upToVersion) {
         for (Map.Entry<Integer, JSONFormParserVersion> entry : VERSIONS.entrySet()) {
             Integer version = entry.getKey();
             JSONFormParserVersion parser = entry.getValue();
@@ -80,7 +80,7 @@ public class JSONFormParser extends JSONFormParserMixin {
         }
     }
 
-    public static void readAndProcessForm(int version, JSONObject jsonObject) throws JSONException {
+    private static void readAndProcessForm(int version, JSONObject jsonObject) throws JSONException {
         JSONFormParserVersion parser = VERSIONS.get(version);
         parser.readAndProcessForm(jsonObject);
     }
@@ -130,7 +130,7 @@ public class JSONFormParser extends JSONFormParserMixin {
 
 class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVersion {
 
-    public static final String TAG = Constants.getLogTag("JSONFormVersion2");
+    private static final String TAG = Constants.getLogTag("JSONFormVersion2");
 
     public void removePreviousData() {
         Log.d(TAG, "removePreviousData");

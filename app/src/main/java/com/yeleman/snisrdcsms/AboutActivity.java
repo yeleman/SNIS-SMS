@@ -160,7 +160,7 @@ public class AboutActivity extends CheckedFormActivity {
         }
     }
 
-    void resetDatabase (String databaseName) {
+    private void resetDatabase (String databaseName) {
         SugarContext.terminate();
         getApplicationContext().deleteDatabase(databaseName);
         SugarContext.init(this);

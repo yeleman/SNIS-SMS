@@ -22,12 +22,12 @@ public class Config extends SugarRecord {
         return Config.count(Config.class, "KEY = ? ", params) > 0;
     }
 
-    public static Long create(String key, String value) {
+    private static Long create(String key, String value) {
         Config config = new Config(key, value);
         return config.save();
     }
 
-    public void setKey(String key) {
+    private void setKey(String key) {
         this.key = key;
     }
 
@@ -35,15 +35,15 @@ public class Config extends SugarRecord {
         return key;
     }
 
-    public void setValue(String value) {
+    private void setValue(String value) {
         this.value = value;
     }
 
-    public String getValue() {
+    private String getValue() {
         return value;
     }
 
-    public static Config getFor(String key) {
+    private static Config getFor(String key) {
         String[] params = new String[]{key};
         return Select.from(Config.class).where("KEY = ?", params).limit("1").first();
     }

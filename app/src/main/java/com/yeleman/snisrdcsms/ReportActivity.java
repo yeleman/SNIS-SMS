@@ -21,8 +21,8 @@ import android.widget.TextView;
 public class ReportActivity extends CheckedFormActivity {
 
 	private final static String TAG = Constants.getLogTag("ReportActivity");
-    final String reportName = Config.get(JSONFormParser.KEY_NAME);
-    Button submitButton;
+    private final String reportName = Config.get(JSONFormParser.KEY_NAME);
+    private Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

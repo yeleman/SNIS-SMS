@@ -11,11 +11,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import java.util.Locale;
-
 public class DataViewerActivity extends CheckedFormActivity {
 
-    public static final String TAG = Constants.getLogTag("DataViewerActivity");
+    private static final String TAG = Constants.getLogTag("DataViewerActivity");
     private Section section = null;
     private LayoutInflater inflater;
     private TableLayout tableLayout;
@@ -165,7 +163,7 @@ public class DataViewerActivity extends CheckedFormActivity {
                 TextView labelCategoryTextView = (TextView) rowView.findViewById(R.id.tv_category_label);
                 labelCategoryTextView.setVisibility(View.VISIBLE);
                 labelCategoryTextView.setText(dataValue.getActualCategory().getLabel());
-                View barCategoryView = (View) rowView.findViewById(R.id.bar_category_view);
+                View barCategoryView = rowView.findViewById(R.id.bar_category_view);
                 barCategoryView.setVisibility(View.VISIBLE);
             }
             labelTextView.setText(label);

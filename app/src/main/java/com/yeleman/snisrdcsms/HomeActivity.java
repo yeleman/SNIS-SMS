@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,6 +36,7 @@ public class HomeActivity extends CheckedFormActivity {
             }
         }
     };
+
     private class databasePreparationRunnable implements Runnable {
         @Override
         public void run() {
@@ -45,11 +45,11 @@ public class HomeActivity extends CheckedFormActivity {
     }
 
     private boolean first_run = true;
-    String name = null;
-    LinearLayout resetLayout;
+    private String name = null;
+    private LinearLayout resetLayout;
 
-    Button startButton;
-    Button resetButton;
+    private Button startButton;
+    private Button resetButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,13 +72,13 @@ public class HomeActivity extends CheckedFormActivity {
         updateResetLayoutVisibility();
     }
 
-    protected void toggleReportButton(boolean enable) {
+    private void toggleReportButton(boolean enable) {
         // toggle reporting button
         startButton.setText(enable ? name : getString(R.string.in_progress));
         startButton.setEnabled(enable);
     }
 
-    protected void prepareDatabase() {
+    private void prepareDatabase() {
         toggleReportButton(false);
         int delay = 1;
         if (first_run) {
@@ -130,7 +130,7 @@ public class HomeActivity extends CheckedFormActivity {
         updateResetLayoutVisibility();
     }
 
-    protected void updateResetLayoutVisibility() {
+    private void updateResetLayoutVisibility() {
         if (resetLayout == null) { return; }
         resetLayout.setVisibility(DataValue.hasValues() ? View.VISIBLE : View.GONE);
     }

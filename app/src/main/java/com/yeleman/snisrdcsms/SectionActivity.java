@@ -22,9 +22,9 @@ public class SectionActivity extends CheckedFormActivity {
 
     public static final int LAYOUT_INCR = 100;
     public static final int INPUT_INCR = 200;
-    public static final int LABEL_INCR = 300;
-    public static final String TAG = Constants.getLogTag("SectionActivity");
-    Section section = null;
+    private static final int LABEL_INCR = 300;
+    private static final String TAG = Constants.getLogTag("SectionActivity");
+    private Section section = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

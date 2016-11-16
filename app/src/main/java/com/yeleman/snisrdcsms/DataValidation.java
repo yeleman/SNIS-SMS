@@ -22,6 +22,7 @@ import com.orm.query.Select;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -30,7 +31,27 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public class DataValidation extends SugarRecord {
+class DataValidation extends SugarRecord {
+
+    static class InfoIconClickedHandler extends Handler {
+        private final WeakReference<TextView> mLabel;
+        private final WeakReference<ImageView> mInfoIcon;
+        private final WeakReference<String> mLabelText;
+
+        InfoIconClickedHandler(TextView label, ImageView infoIcon, String labelText) {
+            mLabel = new WeakReference<>(label);
+            mInfoIcon = new WeakReference<>(infoIcon);
+            mLabelText = new WeakReference<>(labelText);
+        }
+        @Override
+        public void handleMessage(final Message msg) {
+            super.handleMessage(msg);
+            mLabel.get().setText(mLabelText.get());
+            mInfoIcon.get().setEnabled(true);
+            mInfoIcon.get().setColorFilter(DataValidation.INFO_ICON_COLOR);
+
+        }
+    }
 
     @Ignore
     public static final String EQUAL_TO = "eq";
@@ -444,17 +465,7 @@ public class DataValidation extends SugarRecord {
                         if (isCrossSection) {
                             final ImageView leftInfoIcon = (ImageView) leftLineLayout.findViewById(R.id.iv_info);
                             leftInfoIcon.setVisibility(View.VISIBLE);
-
-                            final Handler handler = new Handler() {
-                                @Override
-                                public void handleMessage(final Message msg) {
-                                    super.handleMessage(msg);
-                                    leftLabel.setText(leftDataElementLabel);
-                                    leftInfoIcon.setEnabled(true);
-                                    leftInfoIcon.setColorFilter(DataValidation.INFO_ICON_COLOR);
-
-                                }
-                            };
+                            final InfoIconClickedHandler handler = new InfoIconClickedHandler(leftLabel, leftInfoIcon, leftDataElementLabel);
                             class MyRunnable implements Runnable {
                                 @Override
                                 public void run() { handler.sendEmptyMessage(0); }
@@ -500,15 +511,7 @@ public class DataValidation extends SugarRecord {
                             final ImageView rightInfoIcon = (ImageView) rightLineLayout.findViewById(R.id.iv_info);
                             rightInfoIcon.setVisibility(View.VISIBLE);
 
-                            final Handler handler = new Handler() {
-                                @Override
-                                public void handleMessage(final Message msg) {
-                                    super.handleMessage(msg);
-                                    rightLabel.setText(rightDataElementLabel);
-                                    rightInfoIcon.setEnabled(true);
-                                    rightInfoIcon.setColorFilter(DataValidation.INFO_ICON_COLOR);
-                                }
-                            };
+                            final InfoIconClickedHandler handler = new InfoIconClickedHandler(rightLabel, rightInfoIcon, rightDataElementLabel);
                             class MyRunnable implements Runnable {
                                 @Override
                                 public void run() { handler.sendEmptyMessage(0); }

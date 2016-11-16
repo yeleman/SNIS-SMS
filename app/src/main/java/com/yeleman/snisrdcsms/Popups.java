@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.view.View;
 import android.widget.TextView;
 
-public class Popups {
+class Popups {
 
     public static void showdisplayPermissionErrorPopup(final Context context, String title, String message, Boolean goToSettings) {
         //Toast.makeText(context, message, Toast.LENGTH_SHORT).show();

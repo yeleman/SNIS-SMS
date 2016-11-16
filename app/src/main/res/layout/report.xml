@@ -38,7 +38,6 @@
 
         <Button
             android:onClick="startViewerActivity"
-            android:id="@+id/btn_view"
             android:text="@string/view_data_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

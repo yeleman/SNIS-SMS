@@ -40,7 +40,7 @@ public class Category extends SugarRecord {
         return Category.find(Category.class, "DHIS_ID = ?", dhisId).get(0);
     }
 
-    void setDhisId(String dhisId) {
+    private void setDhisId(String dhisId) {
         this.dhisId = dhisId;
     }
 
@@ -52,7 +52,7 @@ public class Category extends SugarRecord {
         return String.valueOf(getId());
     }
 
-    void setLabel(String label) {
+    private void setLabel(String label) {
         this.label = label;
     }
 
@@ -60,7 +60,7 @@ public class Category extends SugarRecord {
         return label;
     }
 
-    void setOrder(Integer order) {
+    private void setOrder(Integer order) {
         this.m_order = order;
     }
 

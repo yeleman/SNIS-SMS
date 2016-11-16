@@ -50,12 +50,9 @@
     <string name="settings_add_server_num">Ajouter le numéro du serveur à vos contacts</string>
     <string name="settings_server_num">Numéro Serveur</string>
     <string name="settings_server_num_summary">Numéro de téléphone du «serveur-relai»</string>
-    <string name="settings_username">Identifiant</string>
     <string name="settings_username_summary">Identifiant DHIS</string>
-    <string name="settings_password">Mot de passe</string>
     <string name="settings_password_summary">Mot de passe DHIS</string>
     <string name="settings_pin">Code PIN</string>
-    <string name="settings_pin_summary">Remplace le mot de passe DHIS pour plus de rapidité.</string>
     <string name="settings_check">Enregistrer puis vérifier</string>
     <string name="settings_check_summary">Envoi un SMS au serveur pour vérifier les identifiants.</string>
     <string name="settings_pin_hint">Ex: 1234</string>

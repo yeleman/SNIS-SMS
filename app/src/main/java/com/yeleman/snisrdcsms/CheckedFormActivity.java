@@ -56,7 +56,7 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
     protected SMSDeliveredReceiver mSmsDeliveredReceiver = null;
 
     /* Keep an internal state of input validation for each fields */
-	protected LinkedHashMap<Integer, Boolean> checkedFields = new LinkedHashMap<>();
+	protected final LinkedHashMap<Integer, Boolean> checkedFields = new LinkedHashMap<>();
 
     protected void resetFieldCheckedStatus() {
         checkedFields.clear();
@@ -83,11 +83,6 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
 	protected void setupInvalidInputChecks() {}
 	protected boolean ensureDataCoherence() { return false; }
 	protected String buildSMSText() { return ""; }
-	protected void storeReportData() {}
-	protected void restoreReportData() {}
-    protected void resetReportData() {
-        Log.i(TAG, "resetReportData orig");
-    }
 
 	/* Visual feedback for invalid and incorect data */
     protected void addErrorToField(Spinner spinner, String message) {

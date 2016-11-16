@@ -52,27 +52,27 @@ public class HumanId {
         sectionId = Section.getFor(getDataElementId(), getCategoryId()).getId();
     }
 
-    public boolean hasCategory() {
+    private boolean hasCategory() {
         return getCategoryDhisId() != null;
     }
 
-    public void setDataElementDhisId(String dataElementDhisId) {
+    private void setDataElementDhisId(String dataElementDhisId) {
         this.dataElementDhisId = dataElementDhisId;
     }
 
-    public String getDataElementDhisId() {
+    private String getDataElementDhisId() {
         return dataElementDhisId;
     }
 
-    public void setCategoryDhisId(String categoryDhisId) {
+    private void setCategoryDhisId(String categoryDhisId) {
         this.categoryDhisId = categoryDhisId;
     }
 
-    public String getCategoryDhisId() {
+    private String getCategoryDhisId() {
         return categoryDhisId;
     }
 
-    public Long getDataElementId() {
+    private Long getDataElementId() {
         return dataElementId;
     }
 
@@ -80,7 +80,7 @@ public class HumanId {
         return DataElement.findById(DataElement.class, getDataElementId());
     }
 
-    public Long getCategoryId() {
+    private Long getCategoryId() {
         return categoryId;
     }
 
@@ -88,7 +88,7 @@ public class HumanId {
         return Category.findById(Category.class, getCategoryId());
     }
 
-    public Long getDataValueId() {
+    private Long getDataValueId() {
         return dataValueId;
     }
 
@@ -96,7 +96,7 @@ public class HumanId {
         return DataValue.findById(DataValue.class, getDataValueId());
     }
 
-    public Long getSectionId() {
+    private Long getSectionId() {
         return sectionId;
     }
 

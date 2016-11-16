@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Constants {
+class Constants {
 
     private final static String TAG = Constants.getLogTag("Constants");
 

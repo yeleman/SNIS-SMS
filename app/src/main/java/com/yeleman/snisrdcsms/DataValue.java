@@ -56,7 +56,7 @@ public class DataValue extends SugarRecord {
         return Select.from(DataValue.class).where(Condition.prop("DATA_ELEMENT_ID").eq(dataElementId)).list();
     }
 
-    public void setDataElementId(Long dataElementId) { this.dataElementId = dataElementId; }
+    private void setDataElementId(Long dataElementId) { this.dataElementId = dataElementId; }
 
     public Long getDataElementId() {
         return dataElementId;
@@ -70,7 +70,7 @@ public class DataValue extends SugarRecord {
         return Category.findById(Category.class, getCategoryId());
     }
 
-    public void setCategoryId(Long categoryId) {
+    private void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -98,9 +98,9 @@ public class DataValue extends SugarRecord {
         return getValue() == null ? Constants.MISSING_VALUE : Utils.numberFormat(Integer.valueOf(getValue()));
     }
 
-    public void resetValue() { setValue(null); save(); }
+    private void resetValue() { setValue(null); save(); }
 
-    public HumanId getHumanId() {
+    private HumanId getHumanId() {
         return new HumanId(this);
     }
 

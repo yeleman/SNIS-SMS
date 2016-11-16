@@ -53,12 +53,12 @@ class ExternalStorage {
     public File getDirectory() { return getExternalStorageDirectory(); }
 }
 
-public class Utils {
+class Utils {
     public static final String TAG = Constants.getLogTag("Utils");
 
-    static ExternalStorage getExternalStorage() { return new ExternalStorage(); }
+    private static ExternalStorage getExternalStorage() { return new ExternalStorage(); }
 
-    static Boolean copyFile(File from, File to) {
+    private static Boolean copyFile(File from, File to) {
         try {
             FileChannel src = new FileInputStream(from).getChannel();
             FileChannel dst = new FileOutputStream(to).getChannel();
@@ -149,7 +149,7 @@ public class Utils {
         return json;
     }
 
-    public static String buildIndexedDataSMSPart() {
+    private static String buildIndexedDataSMSPart() {
         String smsContent = "";
         for(DataValue dataValue: DataValue.listAllFilled()) {
             smsContent += String.format("%s=%s", dataValue.getHuman(), dataValue.getValue()) + JSONFormParser.SMS_SPACER;
@@ -158,7 +158,7 @@ public class Utils {
         return smsContent.trim();
     }
 
-    public static String buildDataSMSPart() {
+    private static String buildDataSMSPart() {
         String smsFormat = Config.get(JSONFormParser.KEY_SMS_FORMAT);
         String[] codedIds = smsFormat.split(JSONFormParser.SMS_SPACER);
         String smsContent = "";
@@ -186,7 +186,7 @@ public class Utils {
         return smsContent.trim();
     }
 
-    public static String obfuscate(String plain){
+    private static String obfuscate(String plain){
         return StringUtils.replaceEach(plain, Constants.PLAIN_CHARACTERS, Constants.TRANSLATED_CHARACTERS);
     }
 
@@ -194,7 +194,7 @@ public class Utils {
         return StringUtils.replaceEach(encrypted, Constants.TRANSLATED_CHARACTERS, Constants.PLAIN_CHARACTERS);
     }
 
-    public static String getObfuscatedCredentials(Context context) {
+    private static String getObfuscatedCredentials(Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         String username = sharedPref.getString(Constants.KEY_USERNAME, null);
         String password = sharedPref.getString(Constants.KEY_PASSWORD, null);
@@ -263,7 +263,7 @@ public class Utils {
         return getPeriodsArrayLists(3);
     }
 
-    public static ArrayList<ArrayList<String>> getPeriodsArrayLists(int previousMonthNumber) {
+    private static ArrayList<ArrayList<String>> getPeriodsArrayLists(int previousMonthNumber) {
         SimpleDateFormat codeFormat = new SimpleDateFormat("yyMM", Locale.ENGLISH);
         SimpleDateFormat labelFormat = new SimpleDateFormat("MMMM y", Locale.FRANCE);
         Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone("UTC"));

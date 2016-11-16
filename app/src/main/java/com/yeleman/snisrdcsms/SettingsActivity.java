@@ -13,14 +13,12 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds;
 import android.provider.ContactsContract.Data;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -34,10 +32,10 @@ public class SettingsActivity extends CheckedFormActivity {
     private TextInputLayout serverPhoneNumberField;
     private TextInputLayout passwordField;
 
-    String prefServerNumber;
-    String prefUsername;
-    String prefPassword;
-    String prefPinCode;
+    private String prefServerNumber;
+    private String prefUsername;
+    private String prefPassword;
+    private String prefPinCode;
     private final static String TAG = Constants.getLogTag("Settings");
 
     @Override
@@ -231,7 +229,7 @@ public class SettingsActivity extends CheckedFormActivity {
         Popups.updatePopupForStatus(smsMessageDialog, finalResponseStatus);
     }
 
-    void loadPreferenceValues() {
+    private void loadPreferenceValues() {
         prefServerNumber = sharedPrefs.getString(Constants.KEY_SERVER_PHONE_NUMBER, Constants.SERVER_PHONE_NUMBER);
         prefUsername = sharedPrefs.getString(Constants.KEY_USERNAME, null);
         prefPassword = sharedPrefs.getString(Constants.KEY_PASSWORD, null);
