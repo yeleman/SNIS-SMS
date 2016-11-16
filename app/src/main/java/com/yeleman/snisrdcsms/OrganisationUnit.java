@@ -9,7 +9,7 @@ public class OrganisationUnit extends SugarRecord {
     private String dhisId;
     private String label;
 
-    private OrganisationUnit(){
+    public OrganisationUnit(){
     }
 
     public static void truncate() {
@@ -40,7 +40,7 @@ public class OrganisationUnit extends SugarRecord {
 
     public static Boolean exists(String dhisId) {
         String[] params = new String[] { dhisId };
-        return OrganisationUnit.count(OrganisationUnit.class, "DHIS_ID = ? ", params) > 0;
+        return OrganisationUnit.count(OrganisationUnit.class, "DHIS_ID = ?", params) > 0;
     }
 
     public static OrganisationUnit findByDHISId(String dhisId) {
