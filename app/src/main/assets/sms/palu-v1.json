@@ -588,10 +588,6 @@
                     "label": "Visites CPN 4"
                 },
                 {
-                    "id": "PAyx7SSU73M",
-                    "label": "F.E ayant re\u00e7u une MILD"
-                },
-                {
                     "id": "YXyE6qEg2PK",
                     "label": "F.E ayant re\u00e7u SP1"
                 },
@@ -602,6 +598,10 @@
                 {
                     "id": "vJO02Spzsqt",
                     "label": "F.E ayant re\u00e7u SP3"
+                },
+                {
+                    "id": "PAyx7SSU73M",
+                    "label": "F.E ayant re\u00e7u une MILD"
                 }
             ],
             "categories": [

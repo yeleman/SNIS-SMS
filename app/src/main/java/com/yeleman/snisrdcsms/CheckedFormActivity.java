@@ -58,7 +58,6 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
 
 	/* Abstract methods */
 	protected boolean ensureDataCoherence() { return false; }
-	protected String buildSMSText() { return ""; }
 
 	/* Visual feedback for invalid and incorect data */
     protected void addErrorToField(Spinner spinner, String message) {
@@ -67,7 +66,6 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
         errorText.setTextColor(Color.RED);//just to highlight that this is an error
         errorText.setText(message);//changes the selected item text to this
     }
-	protected void addErrorToField(TextView editText, String message) { editText.setError(message); }
     protected void addErrorToField(TextInputLayout editText, String message) { editText.setError(message); }
 
     protected boolean doCheckAndProceed(boolean test, String error_msg, Spinner spinner) {
@@ -87,16 +85,6 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
         }
         return true;
     }
-
-	protected boolean doCheckAndProceed(boolean test, String error_msg, EditText editText) {
-		if (test) {
-            addErrorToField(editText, error_msg);
-			return false;
-		} else {
-			addErrorToField(editText, null);
-		}
-		return true;
-	}
 
 	/* General checking methods */
 	protected boolean ensureValidInputs(boolean focusOnFailing) {
@@ -302,9 +290,6 @@ public class CheckedFormActivity extends AppCompatActivity implements SMSUpdater
         return (content.length() == 0) ? null : content;
     }
 
-    protected Integer integerFromField(EditText editText) {
-        return integerFromField(editText, -1);
-    }
     protected Integer integerFromField(EditText editText, Integer fallback) {
         String text = stringFromField(editText);
         if (text.length() > 0) {
