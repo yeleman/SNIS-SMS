@@ -2,7 +2,6 @@ package com.yeleman.snisrdcsms;
 
 import android.content.Context;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.orm.SugarRecord;
 

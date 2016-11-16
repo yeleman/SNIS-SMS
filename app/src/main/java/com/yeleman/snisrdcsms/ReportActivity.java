@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,7 +108,7 @@ public class ReportActivity extends CheckedFormActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, Constants.PERMISSION_REQUEST_SEND_SMS);
         } else {
             Log.d(TAG, "permission already present");
-            requestPasswordAndTransmitSMS(this, reportName);
+            requestPasswordAndTransmitSMS(this);
             refreshUI();
         }
     }
@@ -123,7 +122,7 @@ public class ReportActivity extends CheckedFormActivity {
                     // permission was granted
                     Log.d(TAG, "permission was granted");
 
-                    requestPasswordAndTransmitSMS(this, reportName);
+                    requestPasswordAndTransmitSMS(this);
                 } else {
                     // permission denied
                     Log.d(TAG, "permission denied");

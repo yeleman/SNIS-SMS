@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -245,26 +243,6 @@ class DataValidation extends SugarRecord {
 
     public EditText getRightField(CheckedFormActivity activity) {
         return (EditText) activity.findViewById(getRightDataValue().getId().intValue()+SectionActivity.INPUT_INCR);
-    }
-
-    public TextInputLayout getLeftInputLayout(CheckedFormActivity activity) {
-        return (TextInputLayout) activity.findViewById(getLeftDataValue().getId().intValue()+SectionActivity.LAYOUT_INCR);
-    }
-
-    public TextInputLayout getRightInputLayout(CheckedFormActivity activity) {
-        return (TextInputLayout) activity.findViewById(getRightDataValue().getId().intValue()+SectionActivity.LAYOUT_INCR);
-    }
-
-    public void setEntryCheck(CheckedFormActivity activity) {
-        EditText left = getLeftField(activity);
-        EditText right = getRightField(activity);
-        activity.setAssertLessThanOrEqualTo(left, right, getLeftDataValue(), getRightDataValue());
-    }
-
-    public void setTextInputEntryCheck(CheckedFormActivity activity) {
-        TextInputLayout left = getLeftInputLayout(activity);
-        TextInputLayout right = getRightInputLayout(activity);
-        activity.setAssertLessThanOrEqualTo(left, right, getLeftDataValue(), getRightDataValue());
     }
 
     public boolean isValid() {

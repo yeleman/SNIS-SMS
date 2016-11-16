@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
-import android.util.Log;
 import android.telephony.SmsMessage;
 
 public class SMSReceiver extends BroadcastReceiver

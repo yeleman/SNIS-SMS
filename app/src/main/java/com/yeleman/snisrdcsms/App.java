@@ -3,8 +3,6 @@ package com.yeleman.snisrdcsms;
 import com.orm.SugarApp;
 import com.orm.SugarContext;
 
-import android.util.Log;
-
 public class App extends SugarApp {
 
     private static final String TAG = Constants.getLogTag("App");

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
