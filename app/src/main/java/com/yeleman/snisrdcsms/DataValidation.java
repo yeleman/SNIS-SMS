@@ -29,7 +29,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-class DataValidation extends SugarRecord {
+public class DataValidation extends SugarRecord {
 
     static class InfoIconClickedHandler extends Handler {
         private final WeakReference<TextView> mLabel;
@@ -156,6 +156,9 @@ class DataValidation extends SugarRecord {
     }
 
     public static List<DataValidation> getForSection(Long sectionId) {
+        if (sectionId == null) {
+            return Select.from(DataValidation.class).where(Condition.prop("SECTION_ID").isNull()).list();
+        }
         return Select.from(DataValidation.class).where(Condition.prop("SECTION_ID").eq(sectionId)).list();
     }
 

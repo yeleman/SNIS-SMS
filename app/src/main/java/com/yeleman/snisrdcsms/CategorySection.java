@@ -7,7 +7,7 @@ import com.orm.SugarRecord;
 
 import java.util.List;
 
-class CategorySection extends SugarRecord {
+public class CategorySection extends SugarRecord {
 
     private Long categoryId;
     private Long sectionId;

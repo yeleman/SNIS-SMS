@@ -241,10 +241,9 @@ class JSONFormVersion2 extends JSONFormParserMixin implements JSONFormParserVers
 
         // record expected DataValue
         for (DataElementSection dataElementSection: DataElementSection.listAll(DataElementSection.class)) {
-            String[] params = new String[] {String.valueOf(dataElementSection.getSectionId())};
-            for (CategorySection categorySection: CategorySection.find(CategorySection.class, "SECTION_ID = ?", params)) {
-                DataValue.create(dataElementSection.getDataElementId(), categorySection.getCategoryId(), null);
-                Log.d(TAG, "Created DataValue with id="+dataElementSection.getDataElementId().toString()+": "+categorySection.getCategoryId().toString());
+            for (Category category: CategorySection.getCategoriesFor(dataElementSection.getSectionId())) {
+                DataValue.create(dataElementSection.getDataElementId(), category.getId(), null);
+                Log.d(TAG, "Created DataValue with id="+dataElementSection.getDataElementId().toString()+": "+category.getId().toString());
             }
             if (dataElementSection.getSection().getCategoryType().equals(Section.NO_CATEGORY)) {
                 DataValue.create(dataElementSection.getDataElementId(), null, null);
