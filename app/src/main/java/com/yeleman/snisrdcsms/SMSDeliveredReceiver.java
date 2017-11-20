@@ -1,7 +1,7 @@
 package com.yeleman.snisrdcsms;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
@@ -38,6 +38,8 @@ public class SMSDeliveredReceiver extends BroadcastReceiver {
         }
         Log.d(TAG, feedback_message);
 
-        mSmsUpdater.gotSMSStatusUpdate(feedback_status, feedback_message);
+        if (mSmsUpdater != null) {
+            mSmsUpdater.gotSMSStatusUpdate(feedback_status, feedback_message);
+        }
     }
 }

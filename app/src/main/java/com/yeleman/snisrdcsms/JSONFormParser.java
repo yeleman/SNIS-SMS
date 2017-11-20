@@ -65,7 +65,10 @@ class JSONFormParser extends JSONFormParserMixin {
 
     public static final String TAG = Constants.getLogTag("JSONFormParser");
     private static final HashMap<Integer,JSONFormParserVersion> VERSIONS = new HashMap<>();
-    static{ VERSIONS.put(2, new JSONFormVersion2()); }
+    static{
+        VERSIONS.put(2, new JSONFormVersion2());
+        VERSIONS.put(3, new JSONFormVersion2());
+    }
 
 
     private static void removePreviousData(int upToVersion) {

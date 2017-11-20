@@ -22,7 +22,7 @@ public class HomeActivity extends CheckedFormActivity {
         public void handleMessage(final Message msg) {
             super.handleMessage(msg);
             try {
-                JSONFormParser.initializeFormFromJSON(getApplicationContext(), "palu-v1.json");
+                JSONFormParser.initializeFormFromJSON(getApplicationContext(), "palu-v3.json");
             } catch (JSONException ex) {
                 Log.e(TAG, ex.toString());
                 ex.printStackTrace();

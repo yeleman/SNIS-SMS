@@ -1,0 +1,271 @@
+{
+    "smsFormat": [
+        "aZwnLALknnj.brxxCYkQqcd",
+		"SpmQSLRPMl4.brxxCYkQqcd",
+		"CIzQAR8IWH1.brxxCYkQqcd",
+		"rfeqp2kdOGi.brxxCYkQqcd",
+		"nRm30I4w9En.brxxCYkQqcd",
+		"aK0QXqm8Zxn.brxxCYkQqcd",
+		"JXm8J8GRJxI.brxxCYkQqcd",
+		"AxJhIi7tUam.brxxCYkQqcd",
+		"CGZbvJchfjk.brxxCYkQqcd",
+		
+		"aZwnLALknnj.yI0WfOFcgSc",
+		"SpmQSLRPMl4.yI0WfOFcgSc",
+		"CIzQAR8IWH1.yI0WfOFcgSc",
+		"rfeqp2kdOGi.yI0WfOFcgSc",
+		"nRm30I4w9En.yI0WfOFcgSc",
+		"aK0QXqm8Zxn.yI0WfOFcgSc",
+		"JXm8J8GRJxI.yI0WfOFcgSc",
+		"AxJhIi7tUam.yI0WfOFcgSc",
+		"CGZbvJchfjk.yI0WfOFcgSc",
+		
+		"jocZb4TE1U2.HllvX50cXC0",
+		"wleambjupW9.HllvX50cXC0",
+		"scjrnpQxZ85.HllvX50cXC0",
+		"ukhWLb7dPET.HllvX50cXC0"
+
+    ],
+    "keyword": "palu",
+    "sections": [
+        {
+            "id": "palu_brxxCYkQqcd",
+            "dataElements": [
+                {
+                    "id": "aZwnLALknnj",
+                    "label": "Cas suspect"
+                },
+                {
+                    "id": "SpmQSLRPMl4",
+                    "label": "TDR positif"
+                },
+                {
+                    "id": "CIzQAR8IWH1",
+                    "label": "TDR r\u00e9alis\u00e9"
+                },
+                {
+                    "id": "rfeqp2kdOGi",
+                    "label": "Paludisme simple confirm\u00e9"
+                },
+                {
+                    "id": "nRm30I4w9En",
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9 [PN]"
+                },
+                {
+                    "id": "aK0QXqm8Zxn",
+                    "label": "Paludisme pr\u00e9sum\u00e9"
+                },
+                {
+                    "id": "JXm8J8GRJxI",
+                    "label": "Paludisme pr\u00e9sum\u00e9 trait\u00e9"
+                },
+                {
+                    "id": "AxJhIi7tUam",
+                    "label": "Paludisme grave"
+                },
+                {
+                    "id": "CGZbvJchfjk",
+                    "label": "Paludisme grave trait\u00e9"
+                }
+                
+            ],
+            "name": "Prise en charge Paludisme: < 5 ans",
+            "category": {
+                "id": "brxxCYkQqcd",
+                "label": "moins de 5 ans"
+            },
+            "checks": [
+            	{
+                    "left": "CIzQAR8IWH1.brxxCYkQqcd",
+                    "operator": "lte",
+                    "right": "aZwnLALknnj.brxxCYkQqcd"
+                },
+                {
+                    "left": "SpmQSLRPMl4.brxxCYkQqcd",
+                    "operator": "lte",
+                    "right": "CIzQAR8IWH1.brxxCYkQqcd"
+                },
+                {
+                    "left": "nRm30I4w9En.brxxCYkQqcd",
+                    "operator": "lte",
+                    "right": "rfeqp2kdOGi.brxxCYkQqcd"
+                },
+                {
+                    "left": "rfeqp2kdOGi.brxxCYkQqcd",
+                    "operator": "lte",
+                    "right": "aZwnLALknnj.brxxCYkQqcd"
+                },
+                {
+                    "left": "JXm8J8GRJxI.brxxCYkQqcd",
+                    "operator": "lte",
+                    "right": "aK0QXqm8Zxn.brxxCYkQqcd"
+                },
+                {
+                    "left": "CGZbvJchfjk.brxxCYkQqcd",
+                    "operator": "lte",
+                    "right": "AxJhIi7tUam.brxxCYkQqcd"
+                },
+                {
+                    "left": "AxJhIi7tUam.brxxCYkQqcd",
+                    "operator": "lte",
+                    "right": "aZwnLALknnj.brxxCYkQqcd"
+                }
+            ]
+        },
+        {
+            "id": "palu_yI0WfOFcgSc",
+            "dataElements": [
+                {
+                    "id": "aZwnLALknnj",
+                    "label": "Cas suspect"
+                },
+                {
+                    "id": "SpmQSLRPMl4",
+                    "label": "TDR positif"
+                },
+                {
+                    "id": "CIzQAR8IWH1",
+                    "label": "TDR r\u00e9alis\u00e9"
+                },
+                {
+                    "id": "rfeqp2kdOGi",
+                    "label": "Paludisme simple confirm\u00e9"
+                },
+                {
+                    "id": "nRm30I4w9En",
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9 [PN]"
+                },
+                {
+                    "id": "aK0QXqm8Zxn",
+                    "label": "Paludisme pr\u00e9sum\u00e9"
+                },
+                {
+                    "id": "JXm8J8GRJxI",
+                    "label": "Paludisme pr\u00e9sum\u00e9 trait\u00e9"
+                },
+                {
+                    "id": "AxJhIi7tUam",
+                    "label": "Paludisme grave"
+                },
+                {
+                    "id": "CGZbvJchfjk",
+                    "label": "Paludisme grave trait\u00e9"
+                }
+                
+            ],
+            "name": "Prise en charge Paludisme: > 5 ans",
+            "category": {
+                "id": "yI0WfOFcgSc",
+                "label": "5 ans et plus"
+            },
+            "checks": [
+                {
+                    "left": "SpmQSLRPMl4.yI0WfOFcgSc",
+                    "operator": "lte",
+                    "right": "CIzQAR8IWH1.yI0WfOFcgSc"
+                },
+                {
+                    "left": "nRm30I4w9En.yI0WfOFcgSc",
+                    "operator": "lte",
+                    "right": "rfeqp2kdOGi.yI0WfOFcgSc"
+                },
+                {
+                    "left": "CIzQAR8IWH1.yI0WfOFcgSc",
+                    "operator": "lte",
+                    "right": "aZwnLALknnj.yI0WfOFcgSc"
+                },
+                {
+                    "left": "JXm8J8GRJxI.yI0WfOFcgSc",
+                    "operator": "lte",
+                    "right": "aK0QXqm8Zxn.yI0WfOFcgSc"
+                },
+                {
+                    "left": "CGZbvJchfjk.yI0WfOFcgSc",
+                    "operator": "lte",
+                    "right": "AxJhIi7tUam.yI0WfOFcgSc"
+                }
+            ]
+        },
+        {
+            "id": "palu_HllvX50cXC0",
+            "dataElements": [
+                {
+                    "id": "jocZb4TE1U2",
+                    "label": "Paludisme simple confirm\u00e9"
+                },
+                {
+                    "id": "wleambjupW9",
+                    "label": "Paludisme simple confirm\u00e9 trait\u00e9 [PN]"
+                },
+                {
+                    "id": "scjrnpQxZ85",
+                    "label": "Paludisme grave"
+                },
+                {
+                    "id": "ukhWLb7dPET",
+                    "label": "Paludisme grave trait\u00e9"
+                }
+            ],
+            "name": "Prise en charge Paludisme: Femmes enceintes",
+            "category": {
+                "id": "HllvX50cXC0",
+                "label": "F.E"
+            },
+            "checks": [
+            	{
+		            "left": "wleambjupW9.HllvX50cXC0",
+		            "operator": "lte",
+		            "right": "jocZb4TE1U2.HllvX50cXC0"
+		        },
+		        {
+		            "left": "ukhWLb7dPET.HllvX50cXC0",
+		            "operator": "lte",
+		            "right": "scjrnpQxZ85.HllvX50cXC0"
+		        }
+            ]
+        }
+    ],
+    "version": 3,
+    "datasetId": "dnhLKSoK4q9",
+    "organisationUnits": [
+        {
+            "id": "F7uEE2Y2TYK",
+            "label": "CME Barumbu"
+        },
+        {
+            "id": "BDbFlRcCtA1",
+            "label": "CS Tembo"
+        },
+        {
+            "id": "PEUi0lksb3r",
+            "label": "CS Sainte Scolastique"
+        },
+        {
+            "id": "i206xocgYtA",
+            "label": "CS Kibangu"
+        }
+    ],
+    "name": "Rapport mensuel Paludisme",
+    "checks": [
+        {
+            "left": "jocZb4TE1U2.HllvX50cXC0",
+            "operator": "lte",
+            "right": "rfeqp2kdOGi.yI0WfOFcgSc"
+        },
+        {
+            "left": "wleambjupW9.HllvX50cXC0",
+            "operator": "lte",
+            "right": "nRm30I4w9En.yI0WfOFcgSc"
+        },
+        {
+            "left": "scjrnpQxZ85.HllvX50cXC0",
+            "operator": "lte",
+            "right": "AxJhIi7tUam.yI0WfOFcgSc"
+        },
+        {
+            "left": "ukhWLb7dPET.HllvX50cXC0",
+            "operator": "lte",
+            "right": "CGZbvJchfjk.yI0WfOFcgSc"
+        }
+    ]
+}
