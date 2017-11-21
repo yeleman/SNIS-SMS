@@ -9,7 +9,7 @@
 		"JXm8J8GRJxI.brxxCYkQqcd",
 		"AxJhIi7tUam.brxxCYkQqcd",
 		"CGZbvJchfjk.brxxCYkQqcd",
-		
+
 		"aZwnLALknnj.yI0WfOFcgSc",
 		"SpmQSLRPMl4.yI0WfOFcgSc",
 		"CIzQAR8IWH1.yI0WfOFcgSc",
@@ -19,7 +19,7 @@
 		"JXm8J8GRJxI.yI0WfOFcgSc",
 		"AxJhIi7tUam.yI0WfOFcgSc",
 		"CGZbvJchfjk.yI0WfOFcgSc",
-		
+
 		"jocZb4TE1U2.HllvX50cXC0",
 		"wleambjupW9.HllvX50cXC0",
 		"scjrnpQxZ85.HllvX50cXC0",
@@ -36,12 +36,12 @@
                     "label": "Cas suspect"
                 },
                 {
-                    "id": "SpmQSLRPMl4",
-                    "label": "TDR positif"
-                },
-                {
                     "id": "CIzQAR8IWH1",
                     "label": "TDR r\u00e9alis\u00e9"
+                },
+                {
+                    "id": "SpmQSLRPMl4",
+                    "label": "TDR positif"
                 },
                 {
                     "id": "rfeqp2kdOGi",
@@ -67,7 +67,7 @@
                     "id": "CGZbvJchfjk",
                     "label": "Paludisme grave trait\u00e9"
                 }
-                
+
             ],
             "name": "Prise en charge Paludisme: < 5 ans",
             "category": {
@@ -75,7 +75,7 @@
                 "label": "moins de 5 ans"
             },
             "checks": [
-            	{
+                {
                     "left": "CIzQAR8IWH1.brxxCYkQqcd",
                     "operator": "lte",
                     "right": "aZwnLALknnj.brxxCYkQqcd"
@@ -120,12 +120,12 @@
                     "label": "Cas suspect"
                 },
                 {
-                    "id": "SpmQSLRPMl4",
-                    "label": "TDR positif"
-                },
-                {
                     "id": "CIzQAR8IWH1",
                     "label": "TDR r\u00e9alis\u00e9"
+                },
+                {
+                    "id": "SpmQSLRPMl4",
+                    "label": "TDR positif"
                 },
                 {
                     "id": "rfeqp2kdOGi",
@@ -151,7 +151,7 @@
                     "id": "CGZbvJchfjk",
                     "label": "Paludisme grave trait\u00e9"
                 }
-                
+
             ],
             "name": "Prise en charge Paludisme: > 5 ans",
             "category": {
@@ -212,16 +212,16 @@
                 "label": "F.E"
             },
             "checks": [
-            	{
-		            "left": "wleambjupW9.HllvX50cXC0",
-		            "operator": "lte",
-		            "right": "jocZb4TE1U2.HllvX50cXC0"
-		        },
-		        {
-		            "left": "ukhWLb7dPET.HllvX50cXC0",
-		            "operator": "lte",
-		            "right": "scjrnpQxZ85.HllvX50cXC0"
-		        }
+                {
+                    "left": "wleambjupW9.HllvX50cXC0",
+                    "operator": "lte",
+                    "right": "jocZb4TE1U2.HllvX50cXC0"
+                },
+                {
+                    "left": "ukhWLb7dPET.HllvX50cXC0",
+                    "operator": "lte",
+                    "right": "scjrnpQxZ85.HllvX50cXC0"
+                }
             ]
         }
     ],
